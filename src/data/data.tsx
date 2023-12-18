@@ -210,7 +210,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: "Pick Up Bob",
     description:
-      "Won the second place at a JUNCTION ASIS hackathon CNT track\nParticipated in planning, design, and development",
+      "Won the second place at a JUNCTION ASIA hackathon CNT track\nParticipated in planning, design, and development",
     url: "https://youtu.be/f-WwRaa4TQA?t=35584",
     image: porfolioImage2,
   },
