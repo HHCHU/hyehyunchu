@@ -208,13 +208,6 @@ export const portfolioItems: PortfolioItem[] = [
     image: porfolioImage1,
   },
   {
-    title: "Pick Up Bob",
-    description:
-      "Won the second place at a JUNCTION ASIA hackathon CNT track\nParticipated in planning, design, and development",
-    url: "https://youtu.be/f-WwRaa4TQA?t=35584",
-    image: porfolioImage2,
-  },
-  {
     title: "Analyzing Speaker Personas in K-Pop Love Songs: Leveraging GPT",
     description:
       "Presented through the Visualization course in Information Science and Culture at Seoul National University, Spring 2023.\nParticipated in project planning and development.",
@@ -222,11 +215,18 @@ export const portfolioItems: PortfolioItem[] = [
     image: porfolioImage3,
   },
   {
+    title: "Pick Up Bob",
+    description:
+      "Won the second place at a JUNCTION ASIA hackathon CNT track\nParticipated in planning, design, and development",
+    url: "https://youtu.be/f-WwRaa4TQA?t=35584",
+    image: porfolioImage2,
+  },
+  {
     title:
       "EmoBridge: Design of a Collaborative Note-taking System to Improve Communication between Students with Disabilities and Peer Notetaker",
     description:
       "Presented through the Introduction to HCI course in Information Science and Culture at Seoul National University. Further developed and wrote a thesis, which was accepted by HCIK. Continuing to work towards CHI LBW and ASSETS.\nParticipated in project planning, user research, design, development, and thesis writing.",
-    url: "https://emobridge.vercel.app/",
+    url: "https://emobridge-ver1.vercel.app/feedbacker",
     image: porfolioImage4,
   },
   {
