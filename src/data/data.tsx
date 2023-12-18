@@ -201,70 +201,47 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: "Project title 1",
-    description: "Give a short description of your project here.",
-    url: "https://reactresume.com",
+    title: "NooN for Fashion",
+    description:
+      "Won the silver medal at a hackathon organized by KAIST SPARCS\nParticipated in planning, design, and development",
+    url: "https://www.instagram.com/p/Co3sORnP_Nj/?igshid=ZWQ3ODFjY2VlOQ%3D%3D5&img_index=5",
     image: porfolioImage1,
   },
   {
-    title: "Project title 2",
-    description: "Give a short description of your project here.",
+    title: "Pick Up Bob",
+    description:
+      "Won the second place at a JUNCTION ASIS hackathon CNT track\nParticipated in planning, design, and development",
     url: "https://reactresume.com",
     image: porfolioImage2,
   },
   {
-    title: "Project title 3",
-    description: "Give a short description of your project here.",
-    url: "https://reactresume.com",
+    title: "Analyzing Speaker Personas in K-Pop Love Songs: Leveraging GPT",
+    description:
+      "Presented through the Visualization course in Information Science and Culture at Seoul National University, Spring 2023.\nParticipated in project planning and development.",
+    url: "https://hhchu.github.io/Visualization/",
     image: porfolioImage3,
   },
   {
-    title: "Project title 4",
-    description: "Give a short description of your project here.",
-    url: "https://reactresume.com",
+    title:
+      "EmoBridge: Design of a Collaborative Note-taking System to Improve Communication between Students with Disabilities and Peer Notetaker",
+    description:
+      "Presented through the Introduction to HCI course in Information Science and Culture at Seoul National University. Further developed and wrote a thesis, which was accepted by HCIK. Continuing to work towards CHI LBW and ASSETS.\nParticipated in project planning, user research, design, development, and thesis writing.",
+    url: "https://emobridge.vercel.app/",
     image: porfolioImage4,
   },
   {
-    title: "Project title 5",
-    description: "Give a short description of your project here.",
-    url: "https://reactresume.com",
+    title: "Aat JongGang",
+    description:
+      "Presented through the Introduction to Information-Culture Technology course in Information Science and Culture at Seoul National University, Fall 2022.\nParticipated in game planning, design, development.",
+    url: "https://hhchu.github.io/AatJongGang/",
     image: porfolioImage5,
   },
   {
-    title: "Project title 6",
-    description: "Give a short description of your project here.",
-    url: "https://reactresume.com",
+    title: "Information Science and Culture Archiving Site",
+    description:
+      "Team Lead for the development of Information Science and Culture assignment archiving site, Spring 2023",
+    url: "https://www.ischive.com/",
     image: porfolioImage6,
-  },
-  {
-    title: "Project title 7",
-    description: "Give a short description of your project here.",
-    url: "https://reactresume.com",
-    image: porfolioImage7,
-  },
-  {
-    title: "Project title 8",
-    description: "Give a short description of your project here.",
-    url: "https://reactresume.com",
-    image: porfolioImage8,
-  },
-  {
-    title: "Project title 9",
-    description: "Give a short description of your project here.",
-    url: "https://reactresume.com",
-    image: porfolioImage9,
-  },
-  {
-    title: "Project title 10",
-    description: "Give a short description of your project here.",
-    url: "https://reactresume.com",
-    image: porfolioImage10,
-  },
-  {
-    title: "Project title 11",
-    description: "Give a short description of your project here.",
-    url: "https://reactresume.com",
-    image: porfolioImage11,
   },
 ]
 
@@ -330,6 +307,8 @@ export const experience: TimelineItem[] = [
         <br />
         Planned new UX/UI based on the incoming POV and collaborated with
         backend developers to design an efficient API communication structure.
+        <br />
+        Participated in In-house service planning, FE development (React, JS)
       </p>
     ),
   },
@@ -344,6 +323,8 @@ export const experience: TimelineItem[] = [
         <br />
         Analyzed project data and created reports to present to senior
         management, resulting in improved decision-making
+        <br />
+        Participated in Service Planning, UX Research, QA, Marketing
       </p>
     ),
   },
