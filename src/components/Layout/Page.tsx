@@ -7,8 +7,6 @@ import { HomepageMeta } from "../../data/dataDef"
 
 const Page: NextPage<PropsWithChildren<HomepageMeta>> = memo(
   ({ children, title, description }) => {
-    const { asPath: pathname } = useRouter()
-
     return (
       <>
         <Head>
