@@ -225,8 +225,9 @@ export const portfolioItems: PortfolioItem[] = [
     title:
       "EmoBridge: Design of a Collaborative Note-taking System to Improve Communication between Students with Disabilities and Peer Notetaker",
     description:
-      "Presented through the Introduction to HCI course in Information Science and Culture at Seoul National University. Further developed and wrote a thesis, which was accepted by HCIK. Continuing to work towards CHI LBW and ASSETS.\nParticipated in project planning, user research, design, development, and thesis writing.",
-    url: "https://emobridge-ver1.vercel.app/feedbacker",
+      "✨ Won Best Paper Award at HCIK ✨\nPresented through the Introduction to HCI course in Information Science and Culture at Seoul National University. Further developed and wrote a thesis, which was accepted by HCIK. Continuing to work towards ASSETS.\nParticipated in project planning, user research, design, development, and thesis writing.",
+    // url: "https://emobridge-ver1.vercel.app/feedbacker",
+    url: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11714774",
     image: porfolioImage4,
   },
   {
@@ -336,14 +337,14 @@ export const experience: TimelineItem[] = [
 export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
-    {
-      name: "Samsung Electronics Mentor - Kumar",
-      text: "I had a great time as Hyehyun's mentor and I feel grateful to get a chance to interact with one of the brightest futures of Korea. I wish Hyehyun to loads of luck for her future and hope to see her at Samsung in the days to come",
-    },
-    {
-      name: "Aimed Manager - Shin",
-      text: "Hyehyun Chu's major is computer science, so she showed good achievements in communication with developers and feature planning. In feature planning, she had a good understanding of how to write a plan so that developers could understand it well, and in communication with developers, she showed high communication skills based on her basic understanding of development.",
-    },
+    // {
+    //   name: "Samsung Electronics Mentor - Kumar",
+    //   text: "I had a great time as Hyehyun's mentor and I feel grateful to get a chance to interact with one of the brightest futures of Korea. I wish Hyehyun to loads of luck for her future and hope to see her at Samsung in the days to come",
+    // },
+    // {
+    //   name: "Aimed Manager - Shin",
+    //   text: "Hyehyun Chu's major is computer science, so she showed good achievements in communication with developers and feature planning. In feature planning, she had a good understanding of how to write a plan so that developers could understand it well, and in communication with developers, she showed high communication skills based on her basic understanding of development.",
+    // },
   ],
 }
 
