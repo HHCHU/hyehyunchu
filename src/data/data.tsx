@@ -298,9 +298,24 @@ export const education: TimelineItem[] = [
 
 export const experience: TimelineItem[] = [
   {
+    date: "February 2024 - Present",
+    location: "Seoul National University, Seoul",
+    title: "HCI+d Lab Undergraduate Research Intern",
+    content: (
+      <p>
+        Currently participating an undergraduate research assistant at the HCI+D
+        lab of Seoul National University.
+        <br />
+        Actively involved in the development and design of a project website for
+        a research study on Large Language Models (LLMs), which is a
+        collaboration with CMU.
+      </p>
+    ),
+  },
+  {
     date: "July 2023 - August 2023",
     location: "Samsung Electronics, Suwon",
-    title: "Frontend Developer ",
+    title: "Frontend Developer",
     content: (
       <p>
         Developed a internal service that increased productivity of company
