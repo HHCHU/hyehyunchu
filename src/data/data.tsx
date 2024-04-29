@@ -17,8 +17,8 @@ import porfolioImage3 from "../images/portfolio/portfolio-3.jpg"
 import porfolioImage4 from "../images/portfolio/portfolio-4.jpg"
 import porfolioImage5 from "../images/portfolio/portfolio-5.jpg"
 import porfolioImage6 from "../images/portfolio/portfolio-6.jpg"
-// import porfolioImage7 from "../images/portfolio/portfolio-7.jpg"
-// import porfolioImage8 from "../images/portfolio/portfolio-8.jpg"
+import porfolioImage7 from "../images/portfolio/portfolio-7.jpg"
+import porfolioImage8 from "../images/portfolio/portfolio-8.jpg"
 // import porfolioImage9 from "../images/portfolio/portfolio-9.jpg"
 // import porfolioImage10 from "../images/portfolio/portfolio-10.jpg"
 // import porfolioImage11 from "../images/portfolio/portfolio-11.jpg"
@@ -243,6 +243,21 @@ export const portfolioItems: PortfolioItem[] = [
       "Team Lead for the development of Information Science and Culture assignment archiving site, Spring 2023",
     url: "https://www.ischive.com/",
     image: porfolioImage6,
+  },
+  {
+    title:
+      "Calendy: Time Management Application powered by Caledar and AI Manager",
+    description:
+      "Presented through the Principles and Practices of Software course Development in Computer Science and Engineering at Seoul National University, Fall 2023\nSelected as Hall of Fame Project\nParticipated in frontend design, development, LLM fintuning, and user study.",
+    url: "https://hcs.snu.ac.kr/courses/Software-Development",
+    image: porfolioImage7,
+  },
+  {
+    title: "Turtle's Snack Time",
+    description:
+      "Presented through the Serious Games course in Information Science and Culture at Seoul National University, Fall 2023\nParticipated in design.",
+    url: "https://joonpart.itch.io/turtles-snacktime",
+    image: porfolioImage8,
   },
 ]
 
