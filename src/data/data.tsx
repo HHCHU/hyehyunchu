@@ -72,11 +72,24 @@ export const heroData: Hero = {
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I'm a Seoul National University College of Liberal Studies Student{" "}
         <strong className="text-stone-100">aiming HCI Researcher</strong>,
+        <br />
         currently majoring in{" "}
         <strong className="text-stone-100">
           Computer Science, Information Science and Culture
         </strong>
-        ,
+        .<br />
+        I am fundamentally interested in helping people become proficient with
+        technology.
+        <br />
+        To achieve this, I believe that accessibility and learning in technology
+        are crucial.
+        <br />
+        Therefore, I aim to research in the fields of{" "}
+        <strong className="text-stone-100">
+          Accessibility, Human-AI interaction, and Computer-Supported
+          Collaborative Learning
+        </strong>
+        .
       </p>
     </>
   ),
@@ -312,6 +325,14 @@ export const education: TimelineItem[] = [
 ]
 
 export const experience: TimelineItem[] = [
+  {
+    date: "July 2024 - Present",
+    location: "KAIST, Daejeon",
+    title: "KIXLab Undergraduate Intern",
+    content: (
+      <p>Currently participating an undergraduate intern at the KIXLAB.</p>
+    ),
+  },
   {
     date: "February 2024 - Present",
     location: "Seoul National University, Seoul",
