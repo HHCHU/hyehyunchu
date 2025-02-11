@@ -5,25 +5,25 @@ import {
   FlagIcon,
   MapIcon,
   SparklesIcon,
-} from "@heroicons/react/24/outline"
+} from "@heroicons/react/24/outline";
 
-import GithubIcon from "../components/Icon/GithubIcon"
-import InstagramIcon from "../components/Icon/InstagramIcon"
-import LinkedInIcon from "../components/Icon/LinkedInIcon"
-import heroImage from "../images/header-background.webp"
-import porfolioImage1 from "../images/portfolio/portfolio-1.jpg"
-import porfolioImage2 from "../images/portfolio/portfolio-2.jpg"
-import porfolioImage3 from "../images/portfolio/portfolio-3.jpg"
-import porfolioImage4 from "../images/portfolio/portfolio-4.jpg"
-import porfolioImage5 from "../images/portfolio/portfolio-5.jpg"
-import porfolioImage6 from "../images/portfolio/portfolio-6.jpg"
-import porfolioImage7 from "../images/portfolio/portfolio-7.jpg"
-import porfolioImage8 from "../images/portfolio/portfolio-8.jpg"
+import GithubIcon from "../components/Icon/GithubIcon";
+import InstagramIcon from "../components/Icon/InstagramIcon";
+import LinkedInIcon from "../components/Icon/LinkedInIcon";
+import heroImage from "../images/header-background.webp";
+import porfolioImage1 from "../images/portfolio/portfolio-1.jpg";
+import porfolioImage2 from "../images/portfolio/portfolio-2.jpg";
+import porfolioImage3 from "../images/portfolio/portfolio-3.jpg";
+import porfolioImage4 from "../images/portfolio/portfolio-4.jpg";
+import porfolioImage5 from "../images/portfolio/portfolio-5.jpg";
+import porfolioImage6 from "../images/portfolio/portfolio-6.jpg";
+import porfolioImage7 from "../images/portfolio/portfolio-7.jpg";
+import porfolioImage8 from "../images/portfolio/portfolio-8.jpg";
 // import porfolioImage9 from "../images/portfolio/portfolio-9.jpg"
 // import porfolioImage10 from "../images/portfolio/portfolio-10.jpg"
 // import porfolioImage11 from "../images/portfolio/portfolio-11.jpg"
-import profilepic from "../images/profilepic.png"
-import testimonialImage from "../images/testimonial.webp"
+import profilepic from "../images/profilepic.png";
+import testimonialImage from "../images/testimonial.webp";
 import {
   About,
   ContactSection,
@@ -35,7 +35,7 @@ import {
   Social,
   TestimonialSection,
   TimelineItem,
-} from "./dataDef"
+} from "./dataDef";
 
 /**
  * Page meta data
@@ -43,7 +43,7 @@ import {
 export const homePageMeta: HomepageMeta = {
   title: "Hyehyun Chu Protfolio Site",
   description: "Hyehyun Chu's Protfolio Site made in December 2023",
-}
+};
 
 /**
  * Section definition
@@ -57,9 +57,9 @@ export const SectionId = {
   Skills: "skills",
   Stats: "stats",
   Testimonials: "testimonials",
-} as const
+} as const;
 
-export type SectionId = (typeof SectionId)[keyof typeof SectionId]
+export type SectionId = (typeof SectionId)[keyof typeof SectionId];
 
 /**
  * Hero section
@@ -70,14 +70,44 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Seoul National University College of Liberal Studies Student{" "}
-        <strong className="text-stone-100">aiming HCI Researcher</strong>,
+        I'm a first-year Master’s student in the{" "}
+        <a
+          href="https://cs.kaist.ac.kr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          School of Computing
+        </a>{" "}
+        at{" "}
+        <a
+          href="https://www.kaist.ac.kr/en/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          KAIST
+        </a>
+        <br />I work together with Professor{" "}
+        <a
+          href="https://juhokim.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Juho Kim
+        </a>{" "}
+        at{" "}
+        <a
+          href="https://www.kixlab.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          KIXLAB
+        </a>
+        .
         <br />
-        currently majoring in{" "}
-        <strong className="text-stone-100">
-          Computer Science, Information Science and Culture
-        </strong>
-        .<br />
         I am fundamentally interested in helping people become proficient with
         technology.
         <br />
@@ -106,7 +136,7 @@ export const heroData: Hero = {
       primary: false,
     },
   ],
-}
+};
 
 /**
  * About section
@@ -118,8 +148,7 @@ export const aboutData: About = {
   During my internship as a front-end developer at Samsung Electronics, I experienced the agile development process.
   Apart from that, I have experience in planning, designing, and front-end development in various projects.`,
   aboutItems: [
-    { label: "Location", text: "Seoul, South Korea", Icon: MapIcon },
-    { label: "Age", text: "24", Icon: CalendarIcon },
+    { label: "Location", text: "Daejeon, South Korea", Icon: MapIcon },
     { label: "Nationality", text: "Korean", Icon: FlagIcon },
     {
       label: "Interests",
@@ -128,7 +157,7 @@ export const aboutData: About = {
     },
     {
       label: "Study",
-      text: "Seoul National University",
+      text: "KAIST, Seoul National University",
       Icon: AcademicCapIcon,
     },
     // {
@@ -137,7 +166,7 @@ export const aboutData: About = {
     //   Icon: BuildingOffice2Icon,
     // },
   ],
-}
+};
 
 /**
  * Skills section
@@ -207,7 +236,7 @@ export const skills: SkillGroup[] = [
       },
     ],
   },
-]
+];
 
 /**
  * Portfolio section
@@ -272,12 +301,24 @@ export const portfolioItems: PortfolioItem[] = [
     url: "https://joonpart.itch.io/turtles-snacktime",
     image: porfolioImage8,
   },
-]
+];
 
 /**
  * Resume section -- TODO: Standardize resume contact format or offer MDX
  */
 export const education: TimelineItem[] = [
+  {
+    date: "September 2024 - Present",
+    location: "KAIST",
+    title: "Master's candidate in School of Computing",
+    content: (
+      <p>
+        Studying Human-Computer Interaction at KIXLAB
+        <br />I research in the fields of Accessibility, Human-AI interaction,
+        and automated UX/UI design
+      </p>
+    ),
+  },
   {
     date: "March 2019 - August 2024",
     location: "Seoul National University",
@@ -322,19 +363,24 @@ export const education: TimelineItem[] = [
   //     </p>
   //   ),
   // },
-]
+];
 
 export const experience: TimelineItem[] = [
   {
-    date: "July 2024 - Present",
+    date: "July 2024 - August 2024",
     location: "KAIST, Daejeon",
     title: "KIXLab Undergraduate Intern",
     content: (
-      <p>Currently participating an undergraduate intern at the KIXLAB.</p>
+      <p>
+        Worked as an undergraduate intern at the KIXLAB.
+        <br />
+        Participated in the development and design of a project for automative
+        UI generation based on user’s LLM usage.
+      </p>
     ),
   },
   {
-    date: "February 2024 - Present",
+    date: "February 2024 - June 2024",
     location: "Seoul National University, Seoul",
     title: "HCI+d Lab Undergraduate Research Intern",
     content: (
@@ -380,7 +426,7 @@ export const experience: TimelineItem[] = [
       </p>
     ),
   },
-]
+];
 
 /**
  * Testimonial section
@@ -397,7 +443,7 @@ export const testimonial: TestimonialSection = {
     //   text: "Hyehyun Chu's major is computer science, so she showed good achievements in communication with developers and feature planning. In feature planning, she had a good understanding of how to write a plan so that developers could understand it well, and in communication with developers, she showed high communication skills based on her basic understanding of development.",
     // },
   ],
-}
+};
 
 /**
  * Contact section
@@ -429,7 +475,7 @@ export const contact: ContactSection = {
       href: "https://github.com/HHCHU",
     },
   ],
-}
+};
 
 /**
  * Social items
@@ -446,4 +492,4 @@ export const socialLinks: Social[] = [
     Icon: InstagramIcon,
     href: "https://www.instagram.com/vermilion_sol/",
   },
-]
+];
