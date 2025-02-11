@@ -1,7 +1,7 @@
 import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
-  CalendarIcon,
+  // CalendarIcon,
   FlagIcon,
   MapIcon,
   SparklesIcon,
@@ -456,8 +456,8 @@ export const contact: ContactSection = {
   items: [
     {
       type: ContactType.Email,
-      text: "ded06031@snu.ac.kr",
-      href: "mailto:ded06031@snu.ac.kr",
+      text: "hyenchu@kaist.ac.kr",
+      href: "mailto:hyenchu@kaist.ac.kr",
     },
     {
       type: ContactType.Location,
