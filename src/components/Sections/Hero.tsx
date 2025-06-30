@@ -1,67 +1,74 @@
-import { ChevronDownIcon } from "@heroicons/react/24/outline"
-import classNames from "classnames"
-import Image from "next/image"
-import { FC, memo } from "react"
-
-import { heroData, SectionId } from "../../data/data"
-import Section from "../Layout/Section"
-import Socials from "../Socials"
+import { FC, memo } from "react";
+import Image from "next/image";
+import { heroData, aboutData } from "../../data/data";
+import Socials from "../Socials";
 
 const Hero: FC = memo(() => {
-  const { imageSrc, name, description, actions } = heroData
+  const { name, description, actions } = heroData;
+  const { profileImageSrc, aboutItems } = aboutData;
 
   return (
-    <Section noPadding sectionId={SectionId.Hero}>
-      <div className="relative flex h-screen w-full items-center justify-center">
-        <Image
-          alt={`${name}-image`}
-          className="absolute z-0 h-full w-full object-cover"
-          placeholder="blur"
-          priority
-          src={imageSrc}
-        />
-        <div className="z-10  max-w-screen-lg px-4 lg:px-0">
-          <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-7xl">
-              {name}
-            </h1>
+    <section className="flex items-center justify-center bg-white pt-16">
+      <div className="w-full max-w-4xl flex flex-col md:flex-row items-center md:items-start gap-10">
+        {/* 프로필 이미지 */}
+        {profileImageSrc && (
+          <div className="flex-shrink-0">
+            <Image
+              src={profileImageSrc}
+              alt="profile"
+              width={140}
+              height={140}
+              className="rounded-full border border-gray-200"
+              priority
+            />
+          </div>
+        )}
+        {/* 텍스트 영역 */}
+        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+            {name}
+          </h1>
+          <div className="text-lg text-black leading-relaxed mb-6">
             {description}
-            <div className="flex gap-x-4 text-neutral-100">
-              <Socials />
-            </div>
-            <div className="flex w-full justify-center gap-x-4">
-              {actions.map(({ href, text, primary, Icon }) => (
+          </div>
+          <div className="flex flex-wrap gap-4 mb-6">
+            {aboutItems.map(({ label, text, Icon }, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
+              >
+                {Icon && <Icon className="h-4 w-4 text-blue-400" />}
+                <span>{label}:</span>
+                <span className="font-normal text-gray-700">{text}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex gap-4 mb-6">
+            <Socials />
+          </div>
+          <div className="flex gap-3">
+            {actions
+              .filter((a) => a.text !== "Contact")
+              .map(({ href, text, primary, Icon }) => (
                 <a
-                  className={classNames(
-                    "flex gap-x-2 rounded-full border-2 bg-none px-4 py-2 text-sm font-medium text-white ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base",
-                    primary
-                      ? "border-orange-400 ring-orange-400"
-                      : "border-white ring-white"
-                  )}
-                  href={href}
                   key={text}
+                  href={href}
+                  className={`px-6 py-2 rounded-md font-semibold text-base transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 ${
+                    primary
+                      ? "bg-sky-500 text-white hover:bg-sky-600 focus:ring-sky-400"
+                      : "bg-white text-sky-600 border border-sky-200 hover:bg-sky-50"
+                  }`}
                 >
+                  {Icon && <Icon className="h-5 w-5 inline-block mr-1" />}
                   {text}
-                  {Icon && (
-                    <Icon className="h-5 w-5 text-white sm:h-6 sm:w-6" />
-                  )}
                 </a>
               ))}
-            </div>
           </div>
         </div>
-        <div className="absolute inset-x-0 bottom-6 flex justify-center">
-          <a
-            className="rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
-            href={`/#${SectionId.About}`}
-          >
-            <ChevronDownIcon className="h-5 w-5 bg-transparent sm:h-6 sm:w-6" />
-          </a>
-        </div>
       </div>
-    </Section>
-  )
-})
+    </section>
+  );
+});
 
-Hero.displayName = "Hero"
-export default Hero
+Hero.displayName = "Hero";
+export default Hero;

@@ -30,7 +30,9 @@ import {
   ContactType,
   Hero,
   HomepageMeta,
+  NewsItem,
   PortfolioItem,
+  Publication,
   SkillGroup,
   Social,
   TestimonialSection,
@@ -41,8 +43,9 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: "Hyehyun Chu Protfolio Site",
-  description: "Hyehyun Chu's Protfolio Site made in December 2023",
+  title: "Hyehyun Chu - HCI Researcher",
+  description:
+    "Hyehyun Chu is a Master's student in Human-Computer Interaction at KAIST KIXLAB, researching accessibility, human-AI interaction, and computer-supported collaborative learning.",
 };
 
 /**
@@ -69,8 +72,8 @@ export const heroData: Hero = {
   name: `Hello, I'm Hyehyun Chu`,
   description: (
     <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a first-year Master’s student in the{" "}
+      <p className="prose-sm text-black sm:prose-base lg:prose-lg">
+        I'm a first-year Master's student in the{" "}
         <a
           href="https://cs.kaist.ac.kr/"
           target="_blank"
@@ -115,9 +118,12 @@ export const heroData: Hero = {
         are crucial.
         <br />
         Therefore, I aim to research in the fields of{" "}
-        <strong className="text-stone-100">
-          Accessibility, Human-AI interaction, and Computer-Supported
-          Collaborative Learning
+        <strong className="text-black">
+          Accessibility, Human-AI interaction,
+        </strong>{" "}
+        and{" "}
+        <strong className="text-black">
+          Computer-Supported Collaborative Learning
         </strong>
         .
       </p>
@@ -125,7 +131,7 @@ export const heroData: Hero = {
   ),
   actions: [
     {
-      href: "/resume.pdf",
+      href: "/CV_2025_06.pdf",
       text: "Resume",
       primary: true,
       Icon: ArrowDownTrayIcon,
@@ -375,7 +381,7 @@ export const experience: TimelineItem[] = [
         Worked as an undergraduate intern at the KIXLAB.
         <br />
         Participated in the development and design of a project for automative
-        UI generation based on user’s LLM usage.
+        UI generation based on user's LLM usage.
       </p>
     ),
   },
@@ -491,5 +497,124 @@ export const socialLinks: Social[] = [
     label: "Instagram",
     Icon: InstagramIcon,
     href: "https://www.instagram.com/vermilion_sol/",
+  },
+];
+
+/**
+ * Publications section
+ */
+export const publications: Publication[] = [
+  {
+    title:
+      "NoRe: Augmenting Journaling Experience with Generative AI for Music Creation",
+    authors:
+      "Joonyoung Park*, Hyewon Cho*, Hyehyun Chu*, Yeeun Lee, and Hajin Lim",
+    venue: "DIS 2025 Technical Papers",
+    link: "https://arxiv.org/abs/2506.01395",
+    note: "* indicates equal contribution",
+  },
+  {
+    title:
+      "Visual Embedding of Screen Sequences for User-Flow Search in Example-driven Communication",
+    authors: "Daeheon Jeong*, Hyehyun Chu*",
+    venue: "CHI 2025 Extended Abstracts (Late Breaking Work)",
+    link: "https://dl.acm.org/doi/full/10.1145/3706599.3720050",
+    note: "* indicates equal contribution",
+  },
+  {
+    title:
+      "NoRe: Augmenting Journaling Experience with Generative AI for Music Creation",
+    authors:
+      "Joonyoung Park*, Yeeun Lee*, Hyewon Cho*, Hyehyun Chu*, Jiin Cheon*, Jinsu Eun, and Hajin Lim",
+    venue: "HCI Korea 2025",
+    link: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE12131623",
+    note: "* indicates equal contribution",
+  },
+  {
+    title:
+      "EmoBridge: Bridging the Communication Gap between Students with Disabilities and Peer Note-Takers Utilizing Emojis and Real-Time Sharing",
+    authors:
+      "Hyungwoo Song*, Minjeong Shin*, Hyehyun Chu*, Jiin Hong*, Jaechan Lee, Jinsu Eun, and Hajin Lim",
+    venue: "ASSETS 2024 Technical Papers",
+    link: "https://dl.acm.org/doi/abs/10.1145/3663548.3675629",
+    note: "* indicates equal contribution",
+  },
+  {
+    title:
+      "EmoBridge: Design of a Collaborative Note-taking System to Improve Communication between Students with Disabilities and Peer Notetaker",
+    authors:
+      "Hyungwoo Song*, Minjeong Shin*, Hyehyun Chu*, Jiin Hong*, Jaechan Lee, Jinsu Eun, and Hajin Lim",
+    venue: "HCI Korea 2024",
+    link: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11714774",
+    note: "* indicates equal contribution",
+  },
+];
+
+/**
+ * News section
+ */
+export const news: NewsItem[] = [
+  {
+    date: "2025.07",
+    title: "Attending DIS 2025 in Madeira",
+    description:
+      "Excited to present our work on 'NoRe: Augmenting Journaling Experience with Generative AI for Music Creation' at DIS 2025 in Madeira, Portugal. Looking forward to connecting with the HCI community!",
+    link: "#",
+  },
+  {
+    date: "2025.04",
+    title: "Attending CHI 2025 in Yokohama",
+    description:
+      "Thrilled to attend CHI 2025 in Yokohama, Japan! Will be presenting our poster on 'Visual Embedding of Screen Sequences for User-Flow Search in Example-driven Communication' and engaging with the global HCI research community.",
+    link: "#",
+  },
+  {
+    date: "2025.04",
+    title: "Paper accepted to DIS 2025",
+    description:
+      "Our paper 'NoRe: Augmenting Journaling Experience with Generative AI for Music Creation' has been accepted to DIS 2025 Technical Papers! This work explores how generative AI can enhance personal journaling through music creation.",
+    link: "#",
+  },
+  {
+    date: "2025.02",
+    title: "CHI 2025 LBW Reviewer",
+    description:
+      "Proud to serve as a reviewer for CHI 2025 Late Breaking Work. It's a great opportunity to contribute to the peer review process and stay updated with the latest HCI research.",
+    link: "#",
+  },
+  {
+    date: "2025.02",
+    title: "Paper accepted to CHI 2025",
+    description:
+      "Delighted to share that our poster 'Visual Embedding of Screen Sequences for User-Flow Search in Example-driven Communication' has been accepted to CHI 2025 Extended Abstracts! This work addresses the challenge of finding relevant UI examples for effective communication.",
+    link: "#",
+  },
+  {
+    date: "2024.09",
+    title: "Started Master's Program at KAIST KIXLAB",
+    description:
+      "Excited to begin my Master's journey in Human-Computer Interaction at KAIST KIXLAB! Working with Prof. Juho Kim on accessibility and human-AI interaction research. Looking forward to contributing to the HCI community.",
+    link: "#",
+  },
+  {
+    date: "2024.07",
+    title: "Research Intern at KAIST KIXLAB",
+    description:
+      "Had an amazing experience as a research intern at KIXLAB, working on automated UI generation projects based on user's LLM usage patterns. Gained valuable insights into human-AI interaction research.",
+    link: "#",
+  },
+  {
+    date: "2024.02",
+    title: "Research Intern at SNU HCI+D Lab",
+    description:
+      "Joined the HCI+D Lab at Seoul National University as a research intern, collaborating on a fascinating project about LLM-generated digital doppelgängers in partnership with CMU. Great learning experience in cross-institutional research.",
+    link: "#",
+  },
+  {
+    date: "2024.01",
+    title: "HCIK Best Paper Award",
+    description:
+      "Honored to receive the Best Paper Award at HCI Korea 2024 for our work 'EmoBridge: Design of a Collaborative Note-taking System to Improve Communication between Students with Disabilities and Peer Notetaker'! This recognition motivates us to continue working on accessibility research.",
+    link: "#",
   },
 ];

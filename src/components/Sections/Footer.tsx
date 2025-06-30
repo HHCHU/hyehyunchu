@@ -1,26 +1,18 @@
-import { ChevronUpIcon } from "@heroicons/react/24/solid"
-import { FC, memo } from "react"
+import { FC, memo } from "react";
 
-import { SectionId } from "../../data/data"
-import Socials from "../Socials"
-
-const Footer: FC = memo(() => (
-  <div className="relative bg-neutral-900 px-4 pb-6 pt-12 sm:px-8 sm:pb-8 sm:pt-14">
-    <div className="absolute inset-x-0 -top-4 flex justify-center sm:-top-6">
-      <a
-        className="rounded-full bg-neutral-100 p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
-        href={`/#${SectionId.Hero}`}
-      >
-        <ChevronUpIcon className="h-6 w-6 bg-transparent sm:h-8 sm:w-8" />
-      </a>
-    </div>
-    <div className="flex flex-col items-center gap-y-6">
-      <div className="flex gap-x-4 text-neutral-500">
-        <Socials />
+const Footer: FC = memo(() => {
+  return (
+    <footer className="bg-gray-50 border-t border-gray-200 py-8">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="text-center">
+          <p className="text-gray-600 text-sm">
+            © 2025 Hyehyun Chu. All rights reserved.
+          </p>
+        </div>
       </div>
-    </div>
-  </div>
-))
+    </footer>
+  );
+});
 
-Footer.displayName = "Footer"
-export default Footer
+Footer.displayName = "Footer";
+export default Footer;
