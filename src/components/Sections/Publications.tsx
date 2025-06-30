@@ -11,6 +11,26 @@ const Publications: FC = memo(() => {
     (pub) => pub.note && pub.note.includes("equal contribution")
   );
 
+  // 내 이름을 bold 처리하는 함수
+  const formatAuthors = (authors: string) => {
+    const myName = "Hyehyun Chu";
+    const parts = authors.split(myName);
+
+    if (parts.length === 1) {
+      // 내 이름이 없는 경우 원본 반환
+      return authors;
+    }
+
+    return parts.map((part, index) => (
+      <span key={index}>
+        {part}
+        {index < parts.length - 1 && (
+          <strong className="font-bold">{myName}</strong>
+        )}
+      </span>
+    ));
+  };
+
   return (
     <div className="space-y-8 pt-16">
       <div>
@@ -21,7 +41,16 @@ const Publications: FC = memo(() => {
         {publications.map((pub, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+            className={`bg-white border border-gray-200 rounded-lg py-8 px-10 transition-all ${
+              pub.link && pub.link !== "#"
+                ? "hover:shadow-lg hover:border-sky-300 cursor-pointer"
+                : "hover:shadow-md"
+            }`}
+            onClick={() => {
+              if (pub.link && pub.link !== "#") {
+                window.open(pub.link, "_blank", "noopener,noreferrer");
+              }
+            }}
           >
             <div className="flex items-start justify-between mb-3">
               <h3 className="text-lg font-semibold text-gray-900 leading-tight">
@@ -29,24 +58,9 @@ const Publications: FC = memo(() => {
               </h3>
             </div>
 
-            <p className="text-gray-700 mb-2">{pub.authors}</p>
+            <p className="text-gray-700 mb-2">{formatAuthors(pub.authors)}</p>
 
             <p className="text-sky-600 text-sm mb-3 font-medium">{pub.venue}</p>
-
-            {pub.link && pub.link !== "#" && (
-              <div className="flex gap-3">
-                <a
-                  href={pub.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  <DocumentTextIcon className="h-4 w-4" />
-                  View Paper
-                  <ArrowTopRightOnSquareIcon className="h-3 w-3" />
-                </a>
-              </div>
-            )}
           </div>
         ))}
       </div>

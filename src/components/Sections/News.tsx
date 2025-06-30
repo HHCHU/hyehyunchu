@@ -35,7 +35,7 @@ const News: FC = memo(() => {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 transition-colors"
+                  className="inline-flex items-center gap-1 text-sm text-sky-600 hover:text-sky-800 transition-colors"
                 >
                   Learn More
                 </a>

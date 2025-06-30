@@ -33,7 +33,7 @@ const Contact: FC = memo(() => {
         <div className="bg-white border border-gray-200 rounded-lg p-8">
           <div className="flex flex-col gap-y-6">
             <div className="flex flex-col gap-6 md:flex-row md:items-center">
-              <EnvelopeIcon className="hidden h-12 w-12 text-blue-600 md:block" />
+              <EnvelopeIcon className="hidden h-12 w-12 text-sky-500 md:block" />
               <h2 className="text-2xl font-bold text-gray-900">{headerText}</h2>
             </div>
             <div className="grid grid-cols-1 gap-6">
@@ -48,8 +48,8 @@ const Contact: FC = memo(() => {
                         <dd className="flex items-center">
                           <a
                             className={classNames(
-                              "-m-2 flex rounded-md p-2 text-gray-600 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-colors",
-                              { "hover:text-blue-600": href }
+                              "-m-2 flex rounded-md p-2 text-gray-600 hover:text-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-600 transition-colors",
+                              { "hover:text-sky-600": href }
                             )}
                             href={href}
                             target="_blank"

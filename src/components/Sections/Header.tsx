@@ -44,8 +44,8 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                   activeTab === tab.id
-                    ? "text-blue-600 bg-blue-50"
-                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    ? "text-sky-600 bg-sky-50"
+                    : "text-gray-700 hover:text-sky-600 hover:bg-gray-50"
                 }`}
               >
                 {tab.label}
@@ -81,8 +81,8 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
                   }}
                   className={`block w-full text-left px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     activeTab === tab.id
-                      ? "text-blue-600 bg-blue-50"
-                      : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                      ? "text-sky-600 bg-sky-50"
+                      : "text-gray-700 hover:text-sky-600 hover:bg-gray-50"
                   }`}
                 >
                   {tab.label}

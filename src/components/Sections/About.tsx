@@ -49,9 +49,9 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
               {aboutItems.map(({ label, text, Icon }, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
+                  className="flex items-center gap-2 px-3 py-1 bg-sky-50 text-sky-700 rounded-full text-sm font-medium"
                 >
-                  {Icon && <Icon className="h-4 w-4 text-blue-400" />}
+                  {Icon && <Icon className="h-4 w-4 text-sky-400" />}
                   <span>{label}:</span>
                   <span className="font-normal text-gray-700">{text}</span>
                 </div>
@@ -67,7 +67,7 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
                   <a
                     key={text}
                     href={href}
-                    className={`px-6 py-2 rounded-md font-semibold text-base transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 ${
+                    className={`px-6 py-2 rounded-md font-semibold text-base transition-colors focus:outline-none focus:ring-2 focus:ring-sky-400 ${
                       primary
                         ? "bg-sky-500 text-white hover:bg-sky-600 focus:ring-sky-400"
                         : "bg-white text-sky-600 border border-sky-200 hover:bg-sky-50"

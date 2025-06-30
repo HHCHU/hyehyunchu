@@ -556,63 +556,63 @@ export const publications: Publication[] = [
 export const news: NewsItem[] = [
   {
     date: "2025.07",
-    title: "Attending DIS 2025 in Madeira",
+    title: "🇵🇹  Attending DIS 2025 in Madeira",
     description:
       "Excited to present our work on 'NoRe: Augmenting Journaling Experience with Generative AI for Music Creation' at DIS 2025 in Madeira, Portugal. Looking forward to connecting with the HCI community!",
     link: "#",
   },
   {
     date: "2025.04",
-    title: "Attending CHI 2025 in Yokohama",
+    title: "🇯🇵  Attending CHI 2025 in Yokohama",
     description:
       "Thrilled to attend CHI 2025 in Yokohama, Japan! Will be presenting our poster on 'Visual Embedding of Screen Sequences for User-Flow Search in Example-driven Communication' and engaging with the global HCI research community.",
     link: "#",
   },
   {
     date: "2025.04",
-    title: "Paper accepted to DIS 2025",
+    title: "🎉  Paper accepted to DIS 2025",
     description:
       "Our paper 'NoRe: Augmenting Journaling Experience with Generative AI for Music Creation' has been accepted to DIS 2025 Technical Papers! This work explores how generative AI can enhance personal journaling through music creation.",
     link: "#",
   },
   {
     date: "2025.02",
-    title: "CHI 2025 LBW Reviewer",
+    title: "📝  CHI 2025 LBW Reviewer",
     description:
       "Proud to serve as a reviewer for CHI 2025 Late Breaking Work. It's a great opportunity to contribute to the peer review process and stay updated with the latest HCI research.",
     link: "#",
   },
   {
     date: "2025.02",
-    title: "Paper accepted to CHI 2025",
+    title: "🎉  Paper accepted to CHI 2025",
     description:
       "Delighted to share that our poster 'Visual Embedding of Screen Sequences for User-Flow Search in Example-driven Communication' has been accepted to CHI 2025 Extended Abstracts! This work addresses the challenge of finding relevant UI examples for effective communication.",
     link: "#",
   },
   {
     date: "2024.09",
-    title: "Started Master's Program at KAIST KIXLAB",
+    title: "🎓  Started Master's Program at KAIST KIXLAB",
     description:
       "Excited to begin my Master's journey in Human-Computer Interaction at KAIST KIXLAB! Working with Prof. Juho Kim on accessibility and human-AI interaction research. Looking forward to contributing to the HCI community.",
     link: "#",
   },
   {
     date: "2024.07",
-    title: "Research Intern at KAIST KIXLAB",
+    title: "✨  Research Intern at KAIST KIXLAB",
     description:
       "Had an amazing experience as a research intern at KIXLAB, working on automated UI generation projects based on user's LLM usage patterns. Gained valuable insights into human-AI interaction research.",
     link: "#",
   },
   {
     date: "2024.02",
-    title: "Research Intern at SNU HCI+D Lab",
+    title: "✨  Research Intern at SNU HCI+D Lab",
     description:
       "Joined the HCI+D Lab at Seoul National University as a research intern, collaborating on a fascinating project about LLM-generated digital doppelgängers in partnership with CMU. Great learning experience in cross-institutional research.",
     link: "#",
   },
   {
     date: "2024.01",
-    title: "HCIK Best Paper Award",
+    title: "🏆  HCIK Best Paper Award",
     description:
       "Honored to receive the Best Paper Award at HCI Korea 2024 for our work 'EmoBridge: Design of a Collaborative Note-taking System to Improve Communication between Students with Disabilities and Peer Notetaker'! This recognition motivates us to continue working on accessibility research.",
     link: "#",

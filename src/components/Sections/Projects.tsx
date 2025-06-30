@@ -1,6 +1,5 @@
 import { FC, memo } from "react";
 import Image from "next/image";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
 import { portfolioItems } from "../../data/data";
 
@@ -15,7 +14,16 @@ const Projects: FC = memo(() => {
         {portfolioItems.map((project, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+            className={`bg-white border border-gray-200 rounded-lg overflow-hidden transition-all ${
+              project.url
+                ? "hover:shadow-lg hover:border-sky-300 cursor-pointer"
+                : "hover:shadow-lg"
+            }`}
+            onClick={() => {
+              if (project.url) {
+                window.open(project.url, "_blank", "noopener,noreferrer");
+              }
+            }}
           >
             <div className="relative h-48">
               <Image
@@ -29,20 +37,9 @@ const Projects: FC = memo(() => {
               <h3 className="text-lg font-semibold text-gray-900 mb-2 leading-tight">
                 {project.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-4 whitespace-pre-line">
+              <p className="text-gray-600 text-sm whitespace-pre-line">
                 {project.description}
               </p>
-              {project.url && (
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  View Project
-                  <ArrowTopRightOnSquareIcon className="h-3 w-3" />
-                </a>
-              )}
             </div>
           </div>
         ))}
