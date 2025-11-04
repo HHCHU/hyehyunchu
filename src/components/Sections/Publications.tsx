@@ -1,8 +1,4 @@
 import { FC, memo } from "react";
-import {
-  DocumentTextIcon,
-  ArrowTopRightOnSquareIcon,
-} from "@heroicons/react/24/outline";
 import { publications } from "../../data/data";
 
 const Publications: FC = memo(() => {
@@ -32,18 +28,18 @@ const Publications: FC = memo(() => {
   };
 
   return (
-    <div className="space-y-8 pt-16">
+    <div className="space-y-6 md:space-y-10 pt-12 md:pt-20">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Publications</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 tracking-tight">Publications</h1>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-4 md:space-y-6">
         {publications.map((pub, index) => (
           <div
             key={index}
-            className={`bg-white border border-gray-200 rounded-lg py-8 px-10 transition-all ${
+            className={`bg-white border border-gray-200 rounded-xl py-6 px-6 md:py-8 md:px-10 transition-all duration-200 ${
               pub.link && pub.link !== "#"
-                ? "hover:shadow-lg hover:border-sky-300 cursor-pointer"
+                ? "hover:shadow-lg hover:border-sky-300 hover:scale-[1.01] cursor-pointer"
                 : "hover:shadow-md"
             }`}
             onClick={() => {
@@ -52,23 +48,21 @@ const Publications: FC = memo(() => {
               }
             }}
           >
-            <div className="flex items-start justify-between mb-3">
-              <h3 className="text-lg font-semibold text-gray-900 leading-tight">
-                {pub.title}
-              </h3>
-            </div>
+            <h3 className="text-xl font-semibold text-gray-900 leading-tight tracking-tight mb-2">
+              {pub.title}
+            </h3>
 
-            <p className="text-gray-700 mb-2">{formatAuthors(pub.authors)}</p>
+            <p className="text-gray-700 text-base mb-2 leading-relaxed">{formatAuthors(pub.authors)}</p>
 
-            <p className="text-sky-600 text-sm mb-3 font-medium">{pub.venue}</p>
+            <p className="text-sky-600 text-base font-semibold mb-0">{pub.venue}</p>
           </div>
         ))}
       </div>
 
       {/* Equal contribution note - 한 번만 표시 */}
       {hasEqualContribution && (
-        <div className="mt-6 pt-4 border-t border-gray-200">
-          <p className="text-gray-500 text-sm italic">
+        <div className="mt-8 pt-6 border-t border-gray-200">
+          <p className="text-gray-500 text-base italic">
             * indicates equal contribution
           </p>
         </div>

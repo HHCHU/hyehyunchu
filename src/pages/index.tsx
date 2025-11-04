@@ -38,8 +38,10 @@ const Home: FC = memo(() => {
     <Page description={description} title={title}>
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
       <main className="flex flex-col items-center min-h-[70vh] bg-white">
-        <div className="w-full max-w-4xl px-4 py-16 flex-1 flex flex-col justify-center">
-          {renderContent()}
+        <div className="w-full max-w-5xl px-4 md:px-6 py-12 md:py-20 flex-1 flex flex-col justify-center">
+          <div key={activeTab} className="animate-fadeIn">
+            {renderContent()}
+          </div>
         </div>
       </main>
       <Contact />

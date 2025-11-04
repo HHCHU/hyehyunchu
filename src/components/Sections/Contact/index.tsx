@@ -28,18 +28,18 @@ const ContactValueMap: Record<ContactType, ContactValue> = {
 const Contact: FC = memo(() => {
   const { headerText, description, items } = contact;
   return (
-    <div className="bg-gray-50 py-16">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="bg-white border border-gray-200 rounded-lg p-8">
-          <div className="flex flex-col gap-y-6">
-            <div className="flex flex-col gap-6 md:flex-row md:items-center">
+    <div className="bg-gradient-to-br from-gray-50 to-white py-12 md:py-20">
+      <div className="max-w-5xl mx-auto px-4 md:px-6">
+        <div className="bg-white border border-gray-200 rounded-xl py-6 px-6 md:py-8 md:px-10 shadow-sm">
+          <div className="flex flex-col gap-y-4">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center">
               <EnvelopeIcon className="hidden h-12 w-12 text-sky-500 md:block" />
-              <h2 className="text-2xl font-bold text-gray-900">{headerText}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-0">{headerText}</h2>
             </div>
-            <div className="grid grid-cols-1 gap-6">
-              <div className="order-1 col-span-1 flex flex-col gap-y-4 md:order-2">
-                <p className="prose leading-6 text-gray-600">{description}</p>
-                <dl className="flex flex-col space-y-4 text-base text-gray-600 sm:space-y-2">
+            <div className="grid grid-cols-1">
+              <div className="order-1 col-span-1 flex flex-col gap-y-3 md:order-2">
+                <p className="text-base md:text-lg leading-relaxed text-gray-600 mb-0">{description}</p>
+                <dl className="flex flex-col space-y-0.5 text-base text-gray-600">
                   {items.map(({ type, text, href }) => {
                     const { Icon, srLabel } = ContactValueMap[type];
                     return (
@@ -48,7 +48,7 @@ const Contact: FC = memo(() => {
                         <dd className="flex items-center">
                           <a
                             className={classNames(
-                              "-m-2 flex rounded-md p-2 text-gray-600 hover:text-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-600 transition-colors",
+                              "flex items-center rounded-lg px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition-all duration-200",
                               { "hover:text-sky-600": href }
                             )}
                             href={href}
@@ -56,9 +56,9 @@ const Contact: FC = memo(() => {
                           >
                             <Icon
                               aria-hidden="true"
-                              className="h-4 w-4 flex-shrink-0 text-gray-500 sm:h-5 sm:w-5"
+                              className="h-5 w-5 flex-shrink-0 text-gray-500 sm:h-6 sm:w-6"
                             />
-                            <span className="ml-3 text-sm sm:text-base">
+                            <span className="ml-4 text-base sm:text-lg font-medium">
                               {text}
                             </span>
                           </a>

@@ -73,7 +73,7 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-black sm:prose-base lg:prose-lg">
-        I'm a first-year Master's student in the{" "}
+        I'm a second-year Master's student in the{" "}
         <a
           href="https://cs.kaist.ac.kr/"
           target="_blank"
@@ -554,6 +554,13 @@ export const publications: Publication[] = [
  * News section
  */
 export const news: NewsItem[] = [
+  {
+    date: "2025.11",
+    title: "🙋  Finding New Collaborators",
+    description:
+      "I'm finding new collaborators for my research. If you are interested in collaborating with me, please check out the internship call (Project #3) from Professor Juho Kim.",
+    link: "https://juhokim.com/2026-winter-internship-call.html",
+  },
   {
     date: "2025.07",
     title: "🇵🇹  Attending DIS 2025 in Madeira",
