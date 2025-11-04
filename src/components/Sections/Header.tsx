@@ -1,8 +1,5 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { FC, memo, useState } from "react";
-import { Link } from "react-scroll";
-
-import { SectionId } from "../../data/data";
 
 interface HeaderProps {
   activeTab: string;
@@ -25,15 +22,12 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo/Name */}
           <div className="flex-shrink-0">
-            <Link
+            <button
               className="text-xl md:text-2xl font-bold text-gray-900 cursor-pointer tracking-tight hover:text-sky-600 transition-colors"
-              to={SectionId.Hero}
-              spy={true}
-              smooth={true}
-              duration={500}
+              onClick={() => setActiveTab("about")}
             >
               Hyehyun Chu
-            </Link>
+            </button>
           </div>
 
           {/* Desktop Navigation */}
