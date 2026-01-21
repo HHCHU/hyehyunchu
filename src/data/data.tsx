@@ -6,6 +6,7 @@ import {
   MapIcon,
   SparklesIcon,
 } from "@heroicons/react/24/outline";
+import { AcademicCapIcon as AcademicCapIconSolid } from "@heroicons/react/24/solid";
 
 import GithubIcon from "../components/Icon/GithubIcon";
 import InstagramIcon from "../components/Icon/InstagramIcon";
@@ -471,6 +472,11 @@ export const contact: ContactSection = {
       href: "https://www.google.ca/maps/place/%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EA%B4%80%EC%95%85%EC%BA%A0%ED%8D%BC%EC%8A%A4/data=!3m1!4b1!4m6!3m5!1s0x357c9fe8a0a1e2a5:0xa1e2eebc04f0c5e7!8m2!3d37.4593505!4d126.9511364!16zL20vMDFidnc1?entry=ttu",
     },
     {
+      type: ContactType.GoogleScholar,
+      text: "Google Scholar",
+      href: "https://scholar.google.com/citations?user=jUN473oAAAAJ&hl=en&authuser=2",
+    },
+    {
       type: ContactType.Instagram,
       text: "@vermillion_sol",
       href: "https://www.instagram.com/vermillion_sol/",
@@ -492,6 +498,11 @@ export const socialLinks: Social[] = [
     label: "LinkedIn",
     Icon: LinkedInIcon,
     href: "https://www.linkedin.com/in/hyehyunchu/",
+  },
+  {
+    label: "Google Scholar",
+    Icon: AcademicCapIconSolid,
+    href: "https://scholar.google.com/citations?user=jUN473oAAAAJ&hl=en&authuser=2",
   },
   {
     label: "Instagram",
@@ -554,6 +565,13 @@ export const publications: Publication[] = [
  * News section
  */
 export const news: NewsItem[] = [
+  {
+    date: "2026.01",
+    title: "🇵🇪  Attending CHI 2026 in Barcelona",
+    description:
+      "Excited to attend CHI 2026 in Barcelona, Spain! Will be presenting our work on 'I Can’t Keep Up: Accessibility Barriers in Video-Based Learning for Individuals with Borderline Intellectual Functioning' as first author!",
+    link: "#",
+  },
   {
     date: "2025.11",
     title: "🙋  Finding New Collaborators",

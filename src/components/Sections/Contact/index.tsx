@@ -3,6 +3,7 @@ import {
   EnvelopeIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
+import { AcademicCapIcon as AcademicCapIconSolid } from "@heroicons/react/24/solid";
 import classNames from "classnames";
 import { FC, memo } from "react";
 
@@ -22,6 +23,7 @@ const ContactValueMap: Record<ContactType, ContactValue> = {
   [ContactType.LinkedIn]: { Icon: LinkedInIcon, srLabel: "LinkedIn" },
   [ContactType.Facebook]: { Icon: FacebookIcon, srLabel: "Facebook" },
   [ContactType.Twitter]: { Icon: TwitterIcon, srLabel: "Twitter" },
+  [ContactType.GoogleScholar]: { Icon: AcademicCapIconSolid, srLabel: "Google Scholar" },
   [ContactType.Instagram]: { Icon: InstagramIcon, srLabel: "Instagram" },
 };
 
