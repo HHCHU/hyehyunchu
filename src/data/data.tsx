@@ -517,6 +517,14 @@ export const socialLinks: Social[] = [
 export const publications: Publication[] = [
   {
     title:
+      "I Can't Keep Up": Accessibility Barriers in Video-Based Learning for Individuals with Borderline Intellectual Functioning,
+    authors:
+      "Hyehyun Chu, Seungju Kim, Chen Zhou, Yu-Kai Hung, Saelyne Yang, Hyun W. Ka, Juho Kim",
+    venue: "CHI 2026",
+    link: "https://arxiv.org/abs/2602.08300",
+  },
+  {
+    title:
       "NoRe: Augmenting Journaling Experience with Generative AI for Music Creation",
     authors:
       "Joonyoung Park*, Hyewon Cho*, Hyehyun Chu*, Yeeun Lee, and Hajin Lim",
@@ -570,7 +578,7 @@ export const news: NewsItem[] = [
     title: "🇵🇪  Attending CHI 2026 in Barcelona",
     description:
       "Excited to attend CHI 2026 in Barcelona, Spain! Will be presenting our work on 'I Can’t Keep Up: Accessibility Barriers in Video-Based Learning for Individuals with Borderline Intellectual Functioning' as first author!",
-    link: "#",
+    link: "https://arxiv.org/abs/2602.08300",
   },
   {
     date: "2025.11",
