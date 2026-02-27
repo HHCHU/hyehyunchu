@@ -517,7 +517,7 @@ export const socialLinks: Social[] = [
 export const publications: Publication[] = [
   {
     title:
-      "I Can't Keep Up": Accessibility Barriers in Video-Based Learning for Individuals with Borderline Intellectual Functioning,
+      '"I Can\'t Keep Up": Accessibility Barriers in Video-Based Learning for Individuals with Borderline Intellectual Functioning',
     authors:
       "Hyehyun Chu, Seungju Kim, Chen Zhou, Yu-Kai Hung, Saelyne Yang, Hyun W. Ka, Juho Kim",
     venue: "CHI 2026",
