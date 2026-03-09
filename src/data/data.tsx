@@ -298,7 +298,7 @@ export const portfolioItems: PortfolioItem[] = [
       "Calendy: Time Management Application powered by Caledar and AI Manager",
     description:
       "Presented through the Principles and Practices of Software course Development in Computer Science and Engineering at Seoul National University, Fall 2023\nSelected as Hall of Fame Project\nParticipated in frontend design, development, LLM fintuning, and user study.",
-    url: "https://hcs.snu.ac.kr/courses/Software-Development",
+    url: "https://drive.google.com/file/d/13QdhINVD2faQ4_P9k6bEOA0y7RLgHfYl/view",
     image: porfolioImage7,
   },
   {
