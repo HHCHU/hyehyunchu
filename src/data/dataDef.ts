@@ -161,6 +161,7 @@ export interface Publication {
   venue: string;
   link?: string;
   note?: string;
+  award?: string;
 }
 
 /**

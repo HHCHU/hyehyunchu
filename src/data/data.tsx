@@ -529,7 +529,7 @@ export const publications: Publication[] = [
     authors:
       "Joonyoung Park*, Hyewon Cho*, Hyehyun Chu*, Yeeun Lee, and Hajin Lim",
     venue: "DIS 2025 Technical Papers",
-    link: "https://arxiv.org/abs/2506.01395",
+    link: "https://dl.acm.org/doi/full/10.1145/3715336.3735845",
     note: "* indicates equal contribution",
   },
   {
@@ -566,6 +566,7 @@ export const publications: Publication[] = [
     venue: "HCI Korea 2024",
     link: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11714774",
     note: "* indicates equal contribution",
+    award: "HCI Korea Best Paper Award",
   },
 ];
 
