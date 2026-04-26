@@ -1,12 +1,38 @@
-import 'tailwindcss/tailwind.css';
-import '../globalStyles.scss';
+import "tailwindcss/tailwind.css";
+import "../globalStyles.scss";
 
-import type {AppProps} from 'next/app';
-import {memo} from 'react';
+import type { AppProps } from "next/app";
+import Script from "next/script";
+import { memo } from "react";
 
-const MyApp = memo(({Component, pageProps}: AppProps): JSX.Element => {
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
+const MyApp = memo(({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <>
+      {GA_ID ? (
+        <>
+          <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            strategy="afterInteractive"
+          />
+
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag(){dataLayer.push(arguments);}
+
+      gtag('js', new Date());
+
+      gtag('config', '${GA_ID}');
+
+    `}
+          </Script>
+        </>
+      ) : null}
       <Component {...pageProps} />
     </>
   );
