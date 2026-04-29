@@ -9,7 +9,7 @@ import {
 import { AcademicCapIcon as AcademicCapIconSolid } from "@heroicons/react/24/solid";
 
 import GithubIcon from "../components/Icon/GithubIcon";
-import InstagramIcon from "../components/Icon/InstagramIcon";
+// import InstagramIcon from "../components/Icon/InstagramIcon";
 import LinkedInIcon from "../components/Icon/LinkedInIcon";
 import heroImage from "../images/header-background.webp";
 import porfolioImage1 from "../images/portfolio/portfolio-1.jpg";
@@ -134,7 +134,7 @@ export const heroData: Hero = {
   actions: [
     {
       href: "/CV_2026_01.pdf",
-      text: "Resume",
+      text: "CV",
       primary: true,
       Icon: ArrowDownTrayIcon,
     },
@@ -486,11 +486,6 @@ export const contact: ContactSection = {
       href: "https://scholar.google.com/citations?user=jUN473oAAAAJ&hl=en&authuser=2",
     },
     {
-      type: ContactType.Instagram,
-      text: "@vermillion_sol",
-      href: "https://www.instagram.com/vermillion_sol/",
-    },
-    {
       type: ContactType.Github,
       text: "HHCHU",
       href: "https://github.com/HHCHU",
@@ -512,11 +507,6 @@ export const socialLinks: Social[] = [
     label: "Google Scholar",
     Icon: AcademicCapIconSolid,
     href: "https://scholar.google.com/citations?user=jUN473oAAAAJ&hl=en&authuser=2",
-  },
-  {
-    label: "Instagram",
-    Icon: InstagramIcon,
-    href: "https://www.instagram.com/vermilion_sol/",
   },
 ];
 

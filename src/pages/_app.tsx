@@ -3,11 +3,11 @@ import "../globalStyles.scss";
 
 import type { AppProps } from "next/app";
 import Script from "next/script";
-import { memo } from "react";
+import { memo, ReactElement } from "react";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-const MyApp = memo(({ Component, pageProps }: AppProps): JSX.Element => {
+const MyApp = memo(({ Component, pageProps }: AppProps): ReactElement => {
   return (
     <>
       {GA_ID ? (
@@ -37,5 +37,7 @@ const MyApp = memo(({ Component, pageProps }: AppProps): JSX.Element => {
     </>
   );
 });
+
+MyApp.displayName = 'MyApp';
 
 export default MyApp;

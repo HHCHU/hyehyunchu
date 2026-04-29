@@ -43,26 +43,26 @@ const Hero: FC = memo(() => {
               </div>
             ))}
           </div>
-          <div className="flex gap-4 mb-6">
+          <div className="flex items-center gap-3">
+            <div className="flex gap-3">
+              {actions
+                .filter((a) => a.text !== "Contact")
+                .map(({ href, text, primary, Icon }) => (
+                  <a
+                    key={text}
+                    href={href}
+                    className={`px-6 py-2 rounded-md font-semibold text-base transition-colors focus:outline-none focus:ring-2 focus:ring-sky-400 ${
+                      primary
+                        ? "bg-sky-500 text-white hover:bg-sky-600 focus:ring-sky-400"
+                        : "bg-white text-sky-600 border border-sky-200 hover:bg-sky-50"
+                    }`}
+                  >
+                    {Icon && <Icon className="h-5 w-5 inline-block mr-1" />}
+                    {text}
+                  </a>
+                ))}
+            </div>
             <Socials />
-          </div>
-          <div className="flex gap-3">
-            {actions
-              .filter((a) => a.text !== "Contact")
-              .map(({ href, text, primary, Icon }) => (
-                <a
-                  key={text}
-                  href={href}
-                  className={`px-6 py-2 rounded-md font-semibold text-base transition-colors focus:outline-none focus:ring-2 focus:ring-sky-400 ${
-                    primary
-                      ? "bg-sky-500 text-white hover:bg-sky-600 focus:ring-sky-400"
-                      : "bg-white text-sky-600 border border-sky-200 hover:bg-sky-50"
-                  }`}
-                >
-                  {Icon && <Icon className="h-5 w-5 inline-block mr-1" />}
-                  {text}
-                </a>
-              ))}
           </div>
         </div>
       </div>
