@@ -113,15 +113,54 @@ export const heroData: Hero = {
         </a>
         .
         <br />
-        I am fundamentally interested in helping people become proficient with
+        Previously, I received my B.S. from{" "}
+        <a
+          href="https://www.snu.ac.kr/eng/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Seoul National University
+        </a>
+        , where I studied{" "}
+        <a
+          href="https://cse.snu.ac.kr/en/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Computer Science and Engineering
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://isc.snu.ac.kr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Information Science and Culture
+        </a>{" "}
+        in the{" "}
+        <a
+          href="https://cls.snu.ac.kr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          College of Liberal Studies
+        </a>
+        .
+        <br />
+        My research focuses on how people learn, use, and collaborate with
+        technology in everyday contexts.
+        <br />
+        I am particularly interested in designing accessible and supportive
+        systems that help people develop confidence and proficiency in using
         technology.
         <br />
-        To achieve this, I believe that accessibility and learning in technology
-        are crucial.
-        <br />
-        Therefore, I aim to research in the fields of{" "}
+        My work lies at the intersection of{" "}
         <strong className="text-black">
-          Accessibility, Human-AI interaction,
+          Accessibility, Human-AI Interaction,
         </strong>{" "}
         and{" "}
         <strong className="text-black">
