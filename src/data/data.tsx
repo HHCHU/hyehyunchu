@@ -115,7 +115,7 @@ export const heroData: Hero = {
         <br />
         Previously, I received my B.S. from{" "}
         <a
-          href="https://www.snu.ac.kr/eng/"
+          href="https://www.snu.ac.kr/"
           target="_blank"
           rel="noopener noreferrer"
           className="underline"
