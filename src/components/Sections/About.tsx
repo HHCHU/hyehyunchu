@@ -12,7 +12,7 @@ interface AboutProps {
 const About: FC<AboutProps> = memo(({ setActiveTab }) => {
   const { profileImageSrc, aboutItems } = aboutData;
   const { name, description, actions } = heroData;
-  const latestNews = news.slice(0, 2); // 최신 뉴스 2개
+  const latestNews = news.slice(0, 2);
 
   const handleViewAllNews = () => {
     if (setActiveTab) {
@@ -21,98 +21,153 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
   };
 
   return (
-    <div className="space-y-8 md:space-y-12 pt-12 md:pt-20">
+    <div className="space-y-16 md:space-y-20 pt-12 md:pt-20">
+      {/* Hero Section */}
       <div>
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
-          {/* 프로필 이미지 */}
+        {/* Top Row: Profile Image (left) + Title (right) */}
+        <div className="grid grid-cols-1 md:grid-cols-[135px_1fr] gap-6 md:gap-12 mb-6 md:mb-8">
+          {/* Left: Profile Image */}
           {profileImageSrc && (
-            <div className="flex-shrink-0">
-              <Image
-                src={profileImageSrc}
-                alt="profile"
-                width={120}
-                height={120}
-                className="rounded-full border-2 border-gray-200 shadow-sm md:w-[160px] md:h-[160px]"
-                priority
-              />
+            <div className="flex justify-start">
+              <div className="relative w-[135px] h-[135px]">
+                <Image
+                  src={profileImageSrc}
+                  alt="profile"
+                  fill
+                  className="border border-black/30 rounded-md object-cover"
+                  priority
+                />
+              </div>
             </div>
           )}
-          {/* 텍스트 영역 */}
-          <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4 md:mb-6 tracking-tight">
+
+          {/* Right: Title only */}
+          <div className="flex flex-col justify-start text-left">
+            <h1 className="text-4xl md:text-6xl font-light text-black">
               {name}
             </h1>
-            <div className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6 md:mb-8 max-w-2xl">
-              {description}
-            </div>
-            <div className="flex flex-wrap justify-center md:justify-start gap-2 md:gap-3 mb-6 md:mb-8">
-              {aboutItems.map(({ label, text, Icon }, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 bg-sky-50 text-sky-700 rounded-full text-sm md:text-base font-medium shadow-sm"
+          </div>
+        </div>
+
+        {/* Description below profile image - left-aligned */}
+        <div className="text-left mb-6 md:mb-8">
+          <div className="text-lg md:text-xl text-black leading-relaxed font-light">
+            {description}
+          </div>
+        </div>
+
+        {/* Metadata Section: aligned to left column edge */}
+        <div className="flex flex-col items-start gap-5 md:gap-6">
+          {/* Interests and Study info */}
+          <div className="flex flex-wrap justify-start gap-3 md:gap-4">
+            {aboutItems.map(({ label, text, Icon }, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-2 text-black text-sm md:text-base font-light"
+                style={{
+                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                }}
+              >
+                {Icon && (
+                  <Icon className="h-4 w-4 md:h-5 md:w-5 text-black/60" />
+                )}
+                <span className="font-light text-black/60">{label}:</span>
+                <span className="font-light">{text}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Action buttons and socials */}
+          <div className="flex flex-wrap items-center justify-start gap-3 md:gap-4">
+            {actions
+              .filter((a) => a.text !== "Contact")
+              .map(({ href, text, Icon }) => (
+                <a
+                  key={text}
+                  href={href}
+                  className="px-5 py-2 md:px-6 md:py-2.5 border border-black/30 bg-white text-black font-light text-sm md:text-base transition-all hover:border-black focus:outline-none rounded-md"
+                  style={{
+                    fontFamily:
+                      "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                  }}
                 >
-                  {Icon && <Icon className="h-4 w-4 md:h-5 md:w-5 text-sky-500" />}
-                  <span className="font-semibold">{label}:</span>
-                  <span className="font-normal text-gray-700">{text}</span>
-                </div>
+                  {Icon && (
+                    <Icon className="h-4 w-4 md:h-5 md:w-5 inline-block mr-1.5 md:mr-2" />
+                  )}
+                  {text}
+                </a>
               ))}
-            </div>
-            <div className="flex gap-4 md:gap-5 mb-6 md:mb-8">
-              <Socials />
-            </div>
-            <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4">
-              {actions
-                .filter((a) => a.text !== "Contact")
-                .map(({ href, text, primary, Icon }) => (
-                  <a
-                    key={text}
-                    href={href}
-                    className={`px-5 py-2.5 md:px-7 md:py-3 rounded-lg font-semibold text-sm md:text-base transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-400 ${
-                      primary
-                        ? "bg-sky-500 text-white hover:bg-sky-600 shadow-sm hover:shadow-md"
-                        : "bg-white text-sky-600 border-2 border-sky-200 hover:bg-sky-50 hover:border-sky-300"
-                    }`}
-                  >
-                    {Icon && <Icon className="h-4 w-4 md:h-5 md:w-5 inline-block mr-1.5 md:mr-2" />}
-                    {text}
-                  </a>
-                ))}
-            </div>
+            <Socials />
           </div>
         </div>
       </div>
 
       {/* Latest News Section */}
-      <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl py-6 px-6 md:py-8 md:px-10 shadow-sm">
-        <div className="mb-4 md:mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-3 tracking-tight">Latest News</h2>
-          <p className="text-base md:text-lg text-gray-600">Recent updates and announcements</p>
+      <div className="border-t border-black/20 pt-10 md:pt-12">
+        <div className="mb-6 md:mb-8">
+          <h2
+            className="text-2xl md:text-3xl font-light text-black mb-2"
+            style={{
+              fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+            }}
+          >
+            Latest News
+          </h2>
+          <p
+            className="text-base md:text-lg text-black/60 font-light"
+            style={{
+              fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+            }}
+          >
+            Recent updates and announcements
+          </p>
         </div>
 
-        <div className="space-y-4 md:space-y-6">
+        <div className="space-y-6 md:space-y-8">
           {latestNews.map((item, index) => (
-            <div key={index} className="border-l-4 border-sky-500 pl-4 md:pl-6 py-2 md:py-3 hover:border-sky-600 transition-colors">
-              <div className="flex items-center gap-2 md:gap-2.5 text-gray-500 text-xs md:text-sm mb-1 md:mb-2">
+            <div
+              key={index}
+              className="border-l border-black/30 pl-4 md:pl-6 py-1"
+            >
+              <div
+                className="flex items-center gap-2 md:gap-2.5 text-black/60 text-xs md:text-sm mb-1 md:mb-2 font-light"
+                style={{
+                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                }}
+              >
                 <CalendarIcon className="h-3.5 w-3.5 md:h-4 md:w-4" />
-                <span className="font-medium">{item.date}</span>
+                <span className="font-light">{item.date}</span>
               </div>
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-1 md:mb-2 leading-tight">
+              <h3
+                className="text-lg md:text-xl font-normal text-black mb-1 md:mb-2 leading-tight"
+                style={{
+                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                }}
+              >
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+              <p
+                className="text-black/80 text-sm md:text-base leading-relaxed font-light"
+                style={{
+                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                }}
+              >
                 {item.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200">
+        <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-black/10">
           <button
             onClick={handleViewAllNews}
-            className="text-sky-600 hover:text-sky-700 text-base font-semibold transition-colors cursor-pointer inline-flex items-center gap-2 group"
+            className="text-black hover:underline text-base font-light transition-all cursor-pointer inline-flex items-center gap-2"
+            style={{
+              fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+            }}
           >
             View all news
-            <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+            <span>→</span>
           </button>
         </div>
       </div>

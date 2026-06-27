@@ -2,8 +2,6 @@ import {
   AcademicCapIcon,
   ArrowDownTrayIcon,
   // CalendarIcon,
-  FlagIcon,
-  MapIcon,
   SparklesIcon,
 } from "@heroicons/react/24/outline";
 import { AcademicCapIcon as AcademicCapIconSolid } from "@heroicons/react/24/solid";
@@ -24,7 +22,7 @@ import porfolioImage9 from "../images/portfolio/icantkeepupResultSummary.jpg";
 // import porfolioImage9 from "../images/portfolio/portfolio-9.jpg"
 // import porfolioImage10 from "../images/portfolio/portfolio-10.jpg"
 // import porfolioImage11 from "../images/portfolio/portfolio-11.jpg"
-import profilepic from "../images/profilepic.png";
+import profilepic from "../images/profilepic.jpg";
 import testimonialImage from "../images/testimonial.webp";
 import {
   About,
@@ -71,7 +69,13 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `Hello, I'm Hyehyun Chu`,
+  name: (
+    <>
+      Hello, I'm
+      <br />
+      Hyehyun Chu
+    </>
+  ),
   description: (
     <>
       <p className="prose-sm text-black sm:prose-base lg:prose-lg">
@@ -93,7 +97,7 @@ export const heroData: Hero = {
         >
           KAIST
         </a>
-        <br />I work together with Professor{" "}
+        , working with Professor{" "}
         <a
           href="https://juhokim.com/"
           target="_blank"
@@ -139,24 +143,12 @@ export const heroData: Hero = {
           className="underline"
         >
           Information Science and Culture
-        </a>{" "}
-        in the{" "}
-        <a
-          href="https://cls.snu.ac.kr/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          College of Liberal Studies
         </a>
         .
         <br />
         My research focuses on how people learn, use, and collaborate with
-        technology in everyday contexts.
-        <br />
-        I am particularly interested in designing accessible and supportive
-        systems that help people develop confidence and proficiency in using
-        technology.
+        technology in everyday contexts, particularly designing accessible and supportive
+        systems.
         <br />
         My work lies at the intersection of{" "}
         <strong className="text-black">
@@ -195,11 +187,9 @@ export const aboutData: About = {
   During my internship as a front-end developer at Samsung Electronics, I experienced the agile development process.
   Apart from that, I have experience in planning, designing, and front-end development in various projects.`,
   aboutItems: [
-    { label: "Location", text: "Daejeon, South Korea", Icon: MapIcon },
-    { label: "Nationality", text: "Korean", Icon: FlagIcon },
     {
       label: "Interests",
-      text: "Band Music, Digital Drawing, HCI Research, Web Development",
+      text: "Band Music, Digital Drawing",
       Icon: SparklesIcon,
     },
     {
@@ -613,10 +603,17 @@ export const publications: Publication[] = [
  */
 export const news: NewsItem[] = [
   {
+    date: "2026.07",
+    title: "📍  Attending FoL and ICML 2026",
+    description:
+      "I'll be attending the Festival of Learning (FoL) and ICML 2026 in Seoul. If you'd like to chat about research, collaboration, or anything HCI-related, feel free to reach out!",
+    link: "#",
+  },
+  {
     date: "2026.01",
     title: "🇵🇪  Attending CHI 2026 in Barcelona",
     description:
-      "Excited to attend CHI 2026 in Barcelona, Spain! Will be presenting our work on 'I Can’t Keep Up: Accessibility Barriers in Video-Based Learning for Individuals with Borderline Intellectual Functioning' as first author!",
+      "Excited to attend CHI 2026 in Barcelona, Spain! Will be presenting our work on 'I Can't Keep Up: Accessibility Barriers in Video-Based Learning for Individuals with Borderline Intellectual Functioning' as first author!",
     link: "https://arxiv.org/abs/2602.08300",
   },
   {

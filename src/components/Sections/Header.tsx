@@ -17,13 +17,13 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="max-w-5xl mx-auto px-4 md:px-6">
+    <header className="fixed top-0 z-50 w-full bg-white border-b border-black/20">
+      <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-24">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo/Name */}
           <div className="flex-shrink-0">
             <button
-              className="text-xl md:text-2xl font-bold text-gray-900 cursor-pointer tracking-tight hover:text-sky-600 transition-colors"
+              className="text-xl md:text-2xl font-normal text-black cursor-pointer hover:underline transition-all"
               onClick={() => setActiveTab("about")}
             >
               Hyehyun Chu
@@ -31,15 +31,15 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-2">
+          <nav className="hidden md:flex items-center space-x-6">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-3 md:px-4 py-2 md:py-2.5 text-sm md:text-base font-medium rounded-lg transition-all duration-200 ${
+                className={`text-sm md:text-base font-normal transition-all ${
                   activeTab === tab.id
-                    ? "text-sky-600 bg-sky-50 shadow-sm"
-                    : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    ? "text-black underline"
+                    : "text-black/60 hover:text-black"
                 }`}
               >
                 {tab.label}
@@ -50,7 +50,7 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              className="text-gray-700 hover:text-gray-900 p-2 rounded-lg hover:bg-gray-50 transition-colors"
+              className="text-black p-2 hover:bg-black/5 transition-all rounded-md"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
@@ -65,8 +65,8 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-3">
-            <div className="pt-2 pb-2 space-y-1 bg-white">
+          <div className="md:hidden pb-3 border-t border-black/10">
+            <div className="pt-2 pb-2 space-y-1">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
@@ -74,10 +74,10 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
                     setActiveTab(tab.id);
                     setIsOpen(false);
                   }}
-                  className={`block w-full text-left px-4 py-2.5 text-base font-medium rounded-lg transition-all duration-200 ${
+                  className={`block w-full text-left px-4 py-2.5 text-base font-normal transition-all ${
                     activeTab === tab.id
-                      ? "text-sky-600 bg-sky-50 shadow-sm"
-                      : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                      ? "text-black underline"
+                      : "text-black/60 hover:text-black"
                   }`}
                 >
                   {tab.label}

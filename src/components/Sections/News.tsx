@@ -4,41 +4,42 @@ import { news } from "../../data/data";
 
 const News: FC = memo(() => {
   return (
-    <div className="space-y-6 md:space-y-10 pt-12 md:pt-20">
+    <div className="space-y-8 md:space-y-10 pt-12 md:pt-20">
       <div>
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 tracking-tight">News</h1>
-        <p className="text-base md:text-lg text-gray-600">Latest updates and announcements</p>
+        <h1 className="text-3xl md:text-4xl font-light text-black mb-3" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>News</h1>
+        <p className="text-base md:text-lg text-black/60 font-light" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>Latest updates and announcements</p>
       </div>
 
-      <div className="space-y-4 md:space-y-8">
+      <div className="space-y-8 md:space-y-10 divide-y divide-black/10">
         {news.map((item, index) => (
           <div
             key={index}
-            className="bg-white border border-gray-200 rounded-xl py-6 px-6 md:py-8 md:px-10 hover:shadow-lg hover:border-sky-300 transition-all duration-200"
+            className={`${index > 0 ? 'pt-8 md:pt-10' : ''} transition-all`}
           >
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex items-center gap-2.5 text-gray-500 text-sm">
+            <div className="flex items-start justify-between mb-3">
+              <div className="flex items-center gap-2.5 text-black/60 text-sm font-light" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                 <CalendarIcon className="h-4 w-4" />
-                <span className="font-medium">{item.date}</span>
+                <span className="font-light">{item.date}</span>
               </div>
             </div>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3 leading-tight tracking-tight">
+            <h3 className="text-xl font-normal text-black mb-3 leading-tight" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
               {item.title}
             </h3>
 
-            <p className="text-gray-600 text-base leading-relaxed">{item.description}</p>
+            <p className="text-black/80 text-base leading-relaxed mb-0 font-light" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{item.description}</p>
 
             {item.link && item.link !== "#" && (
-              <div className="mt-4 pt-4 border-t border-gray-100">
+              <div className="mt-4">
                 <a
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-base text-sky-600 hover:text-sky-700 font-semibold transition-colors group"
+                  className="inline-flex items-center gap-2 text-base text-black hover:underline font-light transition-all"
+                  style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
                 >
                   More
-                  <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                  <span>→</span>
                 </a>
               </div>
             )}

@@ -30,46 +30,44 @@ const ContactValueMap: Record<ContactType, ContactValue> = {
 const Contact: FC = memo(() => {
   const { headerText, description, items } = contact;
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-white py-12 md:py-20">
-      <div className="max-w-5xl mx-auto px-4 md:px-6">
-        <div className="bg-white border border-gray-200 rounded-xl py-6 px-6 md:py-8 md:px-10 shadow-sm">
-          <div className="flex flex-col gap-y-4">
-            <div className="flex flex-col gap-3 md:flex-row md:items-center">
-              <EnvelopeIcon className="hidden h-12 w-12 text-sky-500 md:block" />
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-0">{headerText}</h2>
-            </div>
-            <div className="grid grid-cols-1">
-              <div className="order-1 col-span-1 flex flex-col gap-y-3 md:order-2">
-                <p className="text-base md:text-lg leading-relaxed text-gray-600 mb-0">{description}</p>
-                <dl className="flex flex-col space-y-0.5 text-base text-gray-600">
-                  {items.map(({ type, text, href }) => {
-                    const { Icon, srLabel } = ContactValueMap[type];
-                    return (
-                      <div key={srLabel}>
-                        <dt className="sr-only">{srLabel}</dt>
-                        <dd className="flex items-center">
-                          <a
-                            className={classNames(
-                              "flex items-center rounded-lg px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition-all duration-200",
-                              { "hover:text-sky-600": href }
-                            )}
-                            href={href}
-                            target="_blank"
-                          >
-                            <Icon
-                              aria-hidden="true"
-                              className="h-5 w-5 flex-shrink-0 text-gray-500 sm:h-6 sm:w-6"
-                            />
-                            <span className="ml-4 text-base sm:text-lg font-medium">
-                              {text}
-                            </span>
-                          </a>
-                        </dd>
-                      </div>
-                    );
-                  })}
-                </dl>
-              </div>
+    <div className="py-16 md:py-20">
+      <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-24">
+        <div className="flex flex-col gap-y-6">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center">
+            <EnvelopeIcon className="hidden h-10 w-10 text-black/60 md:block" />
+            <h2 className="text-2xl md:text-3xl font-light text-black mb-0" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{headerText}</h2>
+          </div>
+          <div className="grid grid-cols-1">
+            <div className="order-1 col-span-1 flex flex-col gap-y-4 md:order-2">
+              <p className="text-base md:text-lg leading-relaxed text-black/80 mb-0 font-light" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{description}</p>
+              <dl className="flex flex-col space-y-1 text-base text-black font-light" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+                {items.map(({ type, text, href }) => {
+                  const { Icon, srLabel } = ContactValueMap[type];
+                  return (
+                    <div key={srLabel}>
+                      <dt className="sr-only">{srLabel}</dt>
+                      <dd className="flex items-center">
+                        <a
+                          className={classNames(
+                            "flex items-center py-2 text-black hover:underline focus:outline-none transition-all",
+                            { "hover:underline": href }
+                          )}
+                          href={href}
+                          target="_blank"
+                        >
+                          <Icon
+                            aria-hidden="true"
+                            className="h-5 w-5 flex-shrink-0 text-black/60 sm:h-5 sm:w-5"
+                          />
+                          <span className="ml-3 text-base sm:text-base font-light">
+                            {text}
+                          </span>
+                        </a>
+                      </dd>
+                    </div>
+                  );
+                })}
+              </dl>
             </div>
           </div>
         </div>
