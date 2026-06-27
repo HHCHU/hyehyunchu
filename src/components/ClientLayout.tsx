@@ -1,22 +1,20 @@
-import dynamic from "next/dynamic";
+"use client";
+
 import { FC, memo, useState } from "react";
+import dynamic from "next/dynamic";
 
-import Page from "../components/Layout/Page";
-import About from "../components/Sections/About";
-import Publications from "../components/Sections/Publications";
-import Projects from "../components/Sections/Projects";
-import News from "../components/Sections/News";
-import Contact from "../components/Sections/Contact";
-import Footer from "../components/Sections/Footer";
-import { homePageMeta } from "../data/data";
+import About from "./Sections/About";
+import Publications from "./Sections/Publications";
+import Projects from "./Sections/Projects";
+import News from "./Sections/News";
+import Contact from "./Sections/Contact";
+import Footer from "./Sections/Footer";
 
-// eslint-disable-next-line react-memo/require-memo
-const Header = dynamic(() => import("../components/Sections/Header"), {
+const Header = dynamic(() => import("./Sections/Header"), {
   ssr: false,
 });
 
-const Home: FC = memo(() => {
-  const { title, description } = homePageMeta;
+const ClientLayout: FC = memo(() => {
   const [activeTab, setActiveTab] = useState("about");
 
   const renderContent = () => {
@@ -35,7 +33,7 @@ const Home: FC = memo(() => {
   };
 
   return (
-    <Page description={description} title={title}>
+    <>
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
       <main className="flex flex-col items-center min-h-[70vh] bg-white">
         <div className="w-full max-w-5xl px-4 md:px-6 py-12 md:py-20 flex-1 flex flex-col justify-center">
@@ -46,8 +44,9 @@ const Home: FC = memo(() => {
       </main>
       <Contact />
       <Footer />
-    </Page>
+    </>
   );
 });
 
-export default Home;
+ClientLayout.displayName = "ClientLayout";
+export default ClientLayout;
