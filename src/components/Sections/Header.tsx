@@ -17,7 +17,7 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-white border-b border-black/20">
+    <header className="fixed top-0 z-50 w-full bg-sky-50 border-b border-sky-200">
       <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-24">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo/Name */}
@@ -50,7 +50,7 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              className="text-black p-2 hover:bg-black/5 transition-all rounded-md"
+              className="text-black p-2 hover:bg-sky-100 transition-all rounded-md"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
@@ -65,7 +65,7 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-3 border-t border-black/10">
+          <div className="md:hidden pb-3 border-t border-sky-200">
             <div className="pt-2 pb-2 space-y-1">
               {tabs.map((tab) => (
                 <button

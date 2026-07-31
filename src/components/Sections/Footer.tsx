@@ -2,7 +2,7 @@ import { FC, memo } from "react";
 
 const Footer: FC = memo(() => {
   return (
-    <footer className="bg-white border-t border-black/20 py-8">
+    <footer className="bg-sky-50 border-t border-sky-200 py-8">
       <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-24">
         <div className="text-center">
           <p className="text-black/60 text-sm font-light" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
