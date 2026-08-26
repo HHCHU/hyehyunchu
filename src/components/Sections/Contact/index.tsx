@@ -34,13 +34,13 @@ const Contact: FC = memo(() => {
       <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-24">
         <div className="flex flex-col gap-y-6">
           <div className="flex flex-col gap-3 md:flex-row md:items-center">
-            <EnvelopeIcon className="hidden h-10 w-10 text-black/60 md:block" />
-            <h2 className="text-2xl md:text-3xl font-light text-black mb-0" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{headerText}</h2>
+            <EnvelopeIcon className="hidden h-10 w-10 text-black/60 dark:text-white/60 md:block" />
+            <h2 className="text-2xl md:text-3xl font-light text-black dark:text-white mb-0" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{headerText}</h2>
           </div>
           <div className="grid grid-cols-1">
             <div className="order-1 col-span-1 flex flex-col gap-y-4 md:order-2">
-              <p className="text-base md:text-lg leading-relaxed text-black/80 mb-0 font-light" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{description}</p>
-              <dl className="flex flex-col space-y-1 text-base text-black font-light" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+              <p className="text-base md:text-lg leading-normal text-black/80 dark:text-white/80 mb-0 font-light" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>{description}</p>
+              <dl className="flex flex-col text-base text-black dark:text-white font-light" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
                 {items.map(({ type, text, href }) => {
                   const { Icon, srLabel } = ContactValueMap[type];
                   return (
@@ -49,7 +49,7 @@ const Contact: FC = memo(() => {
                       <dd className="flex items-center">
                         <a
                           className={classNames(
-                            "flex items-center py-2 text-black hover:underline focus:outline-none transition-all",
+                            "flex items-center py-1 text-black dark:text-white hover:underline focus:outline-none transition-all",
                             { "hover:underline": href }
                           )}
                           href={href}
@@ -57,7 +57,7 @@ const Contact: FC = memo(() => {
                         >
                           <Icon
                             aria-hidden="true"
-                            className="h-5 w-5 flex-shrink-0 text-black/60 sm:h-5 sm:w-5"
+                            className="h-5 w-5 flex-shrink-0 text-black/60 dark:text-white/60 sm:h-5 sm:w-5"
                           />
                           <span className="ml-3 text-base sm:text-base font-light">
                             {text}

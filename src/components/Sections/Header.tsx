@@ -1,5 +1,6 @@
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 import { FC, memo, useState } from "react";
+import useTheme from "../../hooks/useTheme";
 
 interface HeaderProps {
   activeTab: string;
@@ -8,6 +9,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const tabs = [
     { id: "about", label: "About" },
@@ -16,14 +18,28 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
     { id: "news", label: "News" },
   ];
 
+  const themeToggleButton = (
+    <button
+      className="text-black dark:text-white p-2 hover:bg-sky-100 dark:hover:bg-white/10 transition-all rounded-md"
+      onClick={toggleTheme}
+      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      {theme === "dark" ? (
+        <SunIcon className="h-5 w-5" />
+      ) : (
+        <MoonIcon className="h-5 w-5" />
+      )}
+    </button>
+  );
+
   return (
-    <header className="fixed top-0 z-50 w-full bg-sky-50 border-b border-sky-200">
+    <header className="fixed top-0 z-50 w-full bg-sky-50 dark:bg-slate-900 border-b border-sky-200 dark:border-slate-700">
       <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 xl:px-24">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo/Name */}
           <div className="flex-shrink-0">
             <button
-              className="text-xl md:text-2xl font-normal text-black cursor-pointer hover:underline transition-all"
+              className="text-xl md:text-2xl font-normal text-black dark:text-white cursor-pointer hover:underline transition-all"
               onClick={() => setActiveTab("about")}
             >
               Hyehyun Chu
@@ -38,19 +54,21 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`text-sm md:text-base font-normal transition-all ${
                   activeTab === tab.id
-                    ? "text-black underline"
-                    : "text-black/60 hover:text-black"
+                    ? "text-black dark:text-white underline"
+                    : "text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white"
                 }`}
               >
                 {tab.label}
               </button>
             ))}
+            {themeToggleButton}
           </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile controls */}
+          <div className="flex items-center md:hidden">
+            {themeToggleButton}
             <button
-              className="text-black p-2 hover:bg-sky-100 transition-all rounded-md"
+              className="text-black dark:text-white p-2 hover:bg-sky-100 dark:hover:bg-white/10 transition-all rounded-md"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
@@ -65,7 +83,7 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-3 border-t border-sky-200">
+          <div className="md:hidden pb-3 border-t border-sky-200 dark:border-slate-700">
             <div className="pt-2 pb-2 space-y-1">
               {tabs.map((tab) => (
                 <button
@@ -76,8 +94,8 @@ const Header: FC<HeaderProps> = memo(({ activeTab, setActiveTab }) => {
                   }}
                   className={`block w-full text-left px-4 py-2.5 text-base font-normal transition-all ${
                     activeTab === tab.id
-                      ? "text-black underline"
-                      : "text-black/60 hover:text-black"
+                      ? "text-black dark:text-white underline"
+                      : "text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white"
                   }`}
                 >
                   {tab.label}

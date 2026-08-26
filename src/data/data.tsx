@@ -33,6 +33,7 @@ import {
   NewsItem,
   PortfolioItem,
   Publication,
+  PublicationType,
   SkillGroup,
   Social,
   TestimonialSection,
@@ -78,7 +79,7 @@ export const heroData: Hero = {
   ),
   description: (
     <>
-      <p className="prose-sm text-black sm:prose-base lg:prose-lg">
+      <p className="prose-sm text-black dark:text-white sm:prose-base lg:prose-lg leading-normal">
         I'm a second-year Master's student in the{" "}
         <a
           href="https://cs.kaist.ac.kr/"
@@ -151,11 +152,11 @@ export const heroData: Hero = {
         systems.
         <br />
         My work lies at the intersection of{" "}
-        <strong className="text-black">
+        <strong className="text-black dark:text-white">
           Accessibility, Human-AI Interaction,
         </strong>{" "}
         and{" "}
-        <strong className="text-black">
+        <strong className="text-black dark:text-white">
           Computer-Supported Collaborative Learning
         </strong>
         .
@@ -550,6 +551,7 @@ export const publications: Publication[] = [
       "Hyehyun Chu, Seungju Kim, Chen Zhou, Yu-Kai Hung, Saelyne Yang, Hyun W. Ka, Juho Kim",
     venue: "CHI 2026",
     link: "https://arxiv.org/abs/2602.08300",
+    type: PublicationType.FullPaper,
   },
   {
     title:
@@ -559,23 +561,7 @@ export const publications: Publication[] = [
     venue: "DIS 2025 Technical Papers",
     link: "https://dl.acm.org/doi/full/10.1145/3715336.3735845",
     note: "* indicates equal contribution",
-  },
-  {
-    title:
-      "Visual Embedding of Screen Sequences for User-Flow Search in Example-driven Communication",
-    authors: "Daeheon Jeong*, Hyehyun Chu*",
-    venue: "CHI 2025 Extended Abstracts (Late Breaking Work)",
-    link: "https://dl.acm.org/doi/full/10.1145/3706599.3720050",
-    note: "* indicates equal contribution",
-  },
-  {
-    title:
-      "NoRe: Augmenting Journaling Experience with Generative AI for Music Creation",
-    authors:
-      "Joonyoung Park*, Yeeun Lee*, Hyewon Cho*, Hyehyun Chu*, Jiin Cheon*, Jinsu Eun, and Hajin Lim",
-    venue: "HCI Korea 2025",
-    link: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE12131623",
-    note: "* indicates equal contribution",
+    type: PublicationType.FullPaper,
   },
   {
     title:
@@ -585,6 +571,35 @@ export const publications: Publication[] = [
     venue: "ASSETS 2024 Technical Papers",
     link: "https://dl.acm.org/doi/abs/10.1145/3663548.3675629",
     note: "* indicates equal contribution",
+    type: PublicationType.FullPaper,
+  },
+  {
+    title:
+      "When AI \"Works,\" When Does Help Begin?: Intergenerational Support Around Older Adults' LLM Usage",
+    authors: "Hyehyun Chu, Yuri Lee, Yeon Su Park, Saelyne Yang, Juho Kim",
+    venue:
+      'CSCW 2026 Workshop — "Growing Up (and Old) with AI: Co-Constructing the Future for Family-Centered AI"',
+    link: "https://arxiv.org/abs/2608.24297",
+    type: PublicationType.PosterWorkshop,
+  },
+  {
+    title:
+      "Visual Embedding of Screen Sequences for User-Flow Search in Example-driven Communication",
+    authors: "Daeheon Jeong*, Hyehyun Chu*",
+    venue: "CHI 2025 Extended Abstracts (Late Breaking Work)",
+    link: "https://dl.acm.org/doi/full/10.1145/3706599.3720050",
+    note: "* indicates equal contribution",
+    type: PublicationType.PosterWorkshop,
+  },
+  {
+    title:
+      "NoRe: Augmenting Journaling Experience with Generative AI for Music Creation",
+    authors:
+      "Joonyoung Park*, Yeeun Lee*, Hyewon Cho*, Hyehyun Chu*, Jiin Cheon*, Jinsu Eun, and Hajin Lim",
+    venue: "HCI Korea 2025",
+    link: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE12131623",
+    note: "* indicates equal contribution",
+    type: PublicationType.FullPaper,
   },
   {
     title:
@@ -595,6 +610,7 @@ export const publications: Publication[] = [
     link: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11714774",
     note: "* indicates equal contribution",
     award: "HCI Korea Best Paper Award",
+    type: PublicationType.FullPaper,
   },
 ];
 

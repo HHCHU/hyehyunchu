@@ -155,6 +155,14 @@ export interface Social {
 /**
  * Publications section
  */
+export const PublicationType = {
+  FullPaper: "FullPaper",
+  PosterWorkshop: "PosterWorkshop",
+} as const;
+
+export type PublicationType =
+  (typeof PublicationType)[keyof typeof PublicationType];
+
 export interface Publication {
   title: string;
   authors: string;
@@ -162,6 +170,7 @@ export interface Publication {
   link?: string;
   note?: string;
   award?: string;
+  type?: PublicationType;
 }
 
 /**

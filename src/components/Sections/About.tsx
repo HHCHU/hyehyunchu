@@ -34,7 +34,7 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
                   src={profileImageSrc}
                   alt="profile"
                   fill
-                  className="border border-black/30 rounded-md object-cover"
+                  className="border border-black/30 dark:border-white/30 rounded-md object-cover"
                   priority
                 />
               </div>
@@ -43,7 +43,7 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
 
           {/* Right: Title only */}
           <div className="flex flex-col justify-start text-left">
-            <h1 className="text-4xl md:text-6xl font-light text-black">
+            <h1 className="text-4xl md:text-6xl font-light text-black dark:text-white">
               {name}
             </h1>
           </div>
@@ -51,7 +51,7 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
 
         {/* Description below profile image - left-aligned */}
         <div className="text-left mb-6 md:mb-8">
-          <div className="text-lg md:text-xl text-black leading-relaxed font-light">
+          <div className="text-lg md:text-xl text-black dark:text-white leading-normal font-light">
             {description}
           </div>
         </div>
@@ -63,15 +63,15 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
             {aboutItems.map(({ label, text, Icon }, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-2 text-black text-sm md:text-base font-light"
+                className="flex items-center gap-2 text-black dark:text-white text-sm md:text-base font-light"
                 style={{
                   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
                 }}
               >
                 {Icon && (
-                  <Icon className="h-4 w-4 md:h-5 md:w-5 text-black/60" />
+                  <Icon className="h-4 w-4 md:h-5 md:w-5 text-black/60 dark:text-white/60" />
                 )}
-                <span className="font-light text-black/60">{label}:</span>
+                <span className="font-light text-black/60 dark:text-white/60">{label}:</span>
                 <span className="font-light">{text}</span>
               </div>
             ))}
@@ -85,7 +85,7 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
                 <a
                   key={text}
                   href={href}
-                  className="px-5 py-2 md:px-6 md:py-2.5 border border-black/30 bg-white text-black font-light text-sm md:text-base transition-all hover:border-black focus:outline-none rounded-md"
+                  className="px-5 py-2 md:px-6 md:py-2.5 border border-black/30 dark:border-white/30 bg-white dark:bg-slate-800 text-black dark:text-white font-light text-sm md:text-base transition-all hover:border-black dark:hover:border-white focus:outline-none rounded-md"
                   style={{
                     fontFamily:
                       "'Helvetica Neue', Helvetica, Arial, sans-serif",
@@ -103,10 +103,10 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
       </div>
 
       {/* Latest News Section */}
-      <div className="border-t border-black/20 pt-10 md:pt-12">
+      <div className="border-t border-black/20 dark:border-white/20 pt-10 md:pt-12">
         <div className="mb-6 md:mb-8">
           <h2
-            className="text-2xl md:text-3xl font-light text-black mb-2"
+            className="text-2xl md:text-3xl font-light text-black dark:text-white mb-2"
             style={{
               fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
             }}
@@ -114,7 +114,7 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
             Latest News
           </h2>
           <p
-            className="text-base md:text-lg text-black/60 font-light"
+            className="text-base md:text-lg text-black/60 dark:text-white/60 font-light"
             style={{
               fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
             }}
@@ -127,10 +127,10 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
           {latestNews.map((item, index) => (
             <div
               key={index}
-              className="border-l border-black/30 pl-4 md:pl-6 py-1"
+              className="border-l border-black/30 dark:border-white/30 pl-4 md:pl-6 py-1"
             >
               <div
-                className="flex items-center gap-2 md:gap-2.5 text-black/60 text-xs md:text-sm mb-1 md:mb-2 font-light"
+                className="flex items-center gap-2 md:gap-2.5 text-black/60 dark:text-white/60 text-xs md:text-sm mb-1 md:mb-2 font-light"
                 style={{
                   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
                 }}
@@ -139,7 +139,7 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
                 <span className="font-light">{item.date}</span>
               </div>
               <h3
-                className="text-lg md:text-xl font-normal text-black mb-1 md:mb-2 leading-tight"
+                className="text-lg md:text-xl font-normal text-black dark:text-white mb-1 md:mb-2 leading-snug"
                 style={{
                   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
                 }}
@@ -147,7 +147,7 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
                 {item.title}
               </h3>
               <p
-                className="text-black/80 text-sm md:text-base leading-relaxed font-light"
+                className="text-black/80 dark:text-white/80 text-sm md:text-base leading-normal font-light"
                 style={{
                   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
                 }}
@@ -158,10 +158,10 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
           ))}
         </div>
 
-        <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-black/10">
+        <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-black/10 dark:border-white/10">
           <button
             onClick={handleViewAllNews}
-            className="text-black hover:underline text-base font-light transition-all cursor-pointer inline-flex items-center gap-2"
+            className="text-black dark:text-white hover:underline text-base font-light transition-all cursor-pointer inline-flex items-center gap-2"
             style={{
               fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
             }}
