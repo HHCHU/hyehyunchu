@@ -1,10 +1,12 @@
 import {
   AcademicCapIcon,
-  ArrowDownTrayIcon,
   // CalendarIcon,
   SparklesIcon,
 } from "@heroicons/react/24/outline";
-import { AcademicCapIcon as AcademicCapIconSolid } from "@heroicons/react/24/solid";
+import {
+  AcademicCapIcon as AcademicCapIconSolid,
+  DocumentTextIcon as DocumentTextIconSolid,
+} from "@heroicons/react/24/solid";
 
 import GithubIcon from "../components/Icon/GithubIcon";
 // import InstagramIcon from "../components/Icon/InstagramIcon";
@@ -46,7 +48,7 @@ import {
 export const homePageMeta: HomepageMeta = {
   title: "Hyehyun Chu - HCI Researcher",
   description:
-    "Hyehyun Chu is a Master's student in Human-Computer Interaction at KAIST KIXLAB, researching accessibility, human-AI interaction, and computer-supported collaborative learning.",
+    "Hyehyun Chu is a Ph.D. student in Human-Computer Interaction at KAIST KIXLAB, researching accessibility, human-AI interaction, and computer-supported collaborative learning.",
 };
 
 /**
@@ -80,7 +82,7 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-black dark:text-white sm:prose-base lg:prose-lg leading-normal">
-        I'm a second-year Master's student in the{" "}
+        I'm a first-year Ph.D. student in the{" "}
         <a
           href="https://cs.kaist.ac.kr/"
           target="_blank"
@@ -148,8 +150,8 @@ export const heroData: Hero = {
         .
         <br />
         My research focuses on how people learn, use, and collaborate with
-        technology in everyday contexts, particularly designing accessible and supportive
-        systems.
+        technology in everyday contexts, particularly designing accessible and
+        supportive systems.
         <br />
         My work lies at the intersection of{" "}
         <strong className="text-black dark:text-white">
@@ -164,12 +166,6 @@ export const heroData: Hero = {
     </>
   ),
   actions: [
-    {
-      href: "/CV_2026_01.pdf",
-      text: "CV",
-      primary: true,
-      Icon: ArrowDownTrayIcon,
-    },
     {
       href: `#${SectionId.Contact}`,
       text: "Contact",
@@ -527,6 +523,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
+  { label: "CV", Icon: DocumentTextIconSolid, href: "/CV_2026_09.pdf" },
   { label: "Github", Icon: GithubIcon, href: "https://github.com/HHCHU" },
   {
     label: "LinkedIn",
@@ -575,7 +572,7 @@ export const publications: Publication[] = [
   },
   {
     title:
-      "When AI \"Works,\" When Does Help Begin?: Intergenerational Support Around Older Adults' LLM Usage",
+      'When AI "Works," When Does Help Begin?: Intergenerational Support Around Older Adults\' LLM Usage',
     authors: "Hyehyun Chu, Yuri Lee, Yeon Su Park, Saelyne Yang, Juho Kim",
     venue:
       'CSCW 2026 Workshop — "Growing Up (and Old) with AI: Co-Constructing the Future for Family-Centered AI"',
@@ -599,7 +596,7 @@ export const publications: Publication[] = [
     venue: "HCI Korea 2025",
     link: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE12131623",
     note: "* indicates equal contribution",
-    type: PublicationType.FullPaper,
+    type: PublicationType.PosterWorkshop,
   },
   {
     title:
@@ -610,7 +607,7 @@ export const publications: Publication[] = [
     link: "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11714774",
     note: "* indicates equal contribution",
     award: "HCI Korea Best Paper Award",
-    type: PublicationType.FullPaper,
+    type: PublicationType.PosterWorkshop,
   },
 ];
 
@@ -618,6 +615,13 @@ export const publications: Publication[] = [
  * News section
  */
 export const news: NewsItem[] = [
+  {
+    date: "2026.10",
+    title: "📍  Attending CSCW 2026",
+    description:
+      "I'll be attending CSCW 2026 for workshop 'Growing Up (and Old) with AI: Co-Constructing the Future for Family-Centered AI'. Looking forward to connecting with the CSCW community!",
+    link: "#",
+  },
   {
     date: "2026.07",
     title: "📍  Attending FoL and ICML 2026",

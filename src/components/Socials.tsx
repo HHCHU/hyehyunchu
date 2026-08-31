@@ -11,6 +11,8 @@ const Socials: FC = memo(() => {
           className="-m-1.5 p-1.5 transition-all text-black dark:text-white hover:underline focus:outline-none sm:-m-3 sm:p-3"
           href={href}
           key={label}
+          target={href.startsWith("http") ? "_blank" : undefined}
+          rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
         >
           <Icon className="h-5 w-5 align-baseline sm:h-6 sm:w-6" />
         </a>

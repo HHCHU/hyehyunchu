@@ -11,7 +11,7 @@ interface AboutProps {
 
 const About: FC<AboutProps> = memo(({ setActiveTab }) => {
   const { profileImageSrc, aboutItems } = aboutData;
-  const { name, description, actions } = heroData;
+  const { name, description } = heroData;
   const latestNews = news.slice(0, 2);
 
   const handleViewAllNews = () => {
@@ -77,26 +77,8 @@ const About: FC<AboutProps> = memo(({ setActiveTab }) => {
             ))}
           </div>
 
-          {/* Action buttons and socials */}
+          {/* Socials (includes CV) */}
           <div className="flex flex-wrap items-center justify-start gap-3 md:gap-4">
-            {actions
-              .filter((a) => a.text !== "Contact")
-              .map(({ href, text, Icon }) => (
-                <a
-                  key={text}
-                  href={href}
-                  className="px-5 py-2 md:px-6 md:py-2.5 border border-black/30 dark:border-white/30 bg-white dark:bg-slate-800 text-black dark:text-white font-light text-sm md:text-base transition-all hover:border-black dark:hover:border-white focus:outline-none rounded-md"
-                  style={{
-                    fontFamily:
-                      "'Helvetica Neue', Helvetica, Arial, sans-serif",
-                  }}
-                >
-                  {Icon && (
-                    <Icon className="h-4 w-4 md:h-5 md:w-5 inline-block mr-1.5 md:mr-2" />
-                  )}
-                  {text}
-                </a>
-              ))}
             <Socials />
           </div>
         </div>
