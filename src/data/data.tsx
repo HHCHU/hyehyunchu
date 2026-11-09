@@ -523,7 +523,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  { label: "CV", Icon: DocumentTextIconSolid, href: "/CV_2026_09.pdf" },
+  { label: "CV", Icon: DocumentTextIconSolid, href: "/CV.pdf" },
   { label: "Github", Icon: GithubIcon, href: "https://github.com/HHCHU" },
   {
     label: "LinkedIn",
